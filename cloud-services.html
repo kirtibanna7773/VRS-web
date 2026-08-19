@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Cloud Services | VRS IT Solutions</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background: #f5f7fb;
+        color: #222;
+      }
+
+      header {
+        background: #0b1f3a;
+        padding: 20px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 25px;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, #0b1f3a, #1769aa);
+        color: white;
+        text-align: center;
+        padding: 100px 20px;
+      }
+
+      .hero h1 {
+        font-size: 50px;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        font-size: 20px;
+        max-width: 750px;
+        margin: auto;
+        line-height: 1.6;
+      }
+
+      section {
+        padding: 70px 8%;
+      }
+
+      .title {
+        text-align: center;
+        color: #0b1f3a;
+        font-size: 35px;
+        margin-bottom: 40px;
+      }
+
+      .services {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .card {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .card h3 {
+        color: #1769aa;
+        margin-bottom: 15px;
+      }
+
+      .card p {
+        line-height: 1.6;
+      }
+
+      .back {
+        display: block;
+        width: fit-content;
+        margin: 20px auto 50px;
+        background: #1769aa;
+        color: white;
+        padding: 14px 25px;
+        border-radius: 6px;
+        text-decoration: none;
+      }
+
+      footer {
+        background: #0b1f3a;
+        color: white;
+        text-align: center;
+        padding: 25px;
+      }
+
+      @media (max-width: 768px) {
+        .services {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .hero h1 {
+          font-size: 38px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">VRS IT Solutions</div>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Cloud Services</h1>
+
+      <p>
+        VRS IT Solutions provides reliable cloud solutions that help businesses
+        store, manage and access their data securely.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="title">Our Cloud Services</h2>
+
+      <div class="services">
+        <div class="card">
+          <h3>Cloud Storage</h3>
+          <p>
+            Secure and scalable storage solutions for business data and
+            important files.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Cloud Backup</h3>
+          <p>
+            Protect important business data with reliable cloud backup
+            solutions.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Cloud Migration</h3>
+          <p>
+            Move your existing applications and data to modern cloud platforms.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Cloud Hosting</h3>
+          <p>
+            Fast and scalable hosting solutions for websites and applications.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Cloud Security</h3>
+          <p>
+            Security-focused solutions to help protect your cloud infrastructure
+            and data.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Cloud Support</h3>
+          <p>Technical assistance and monitoring for cloud-based systems.</p>
+        </div>
+      </div>
+    </section>
+
+    <a href="index.html" class="back"> ← Back to Home </a>
+
+    <footer>
+      <p>© 2026 VRS IT Solutions. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

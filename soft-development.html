@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Software Development | VRS IT Solutions</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background: #f5f7fb;
+        color: #222;
+      }
+
+      header {
+        background: #0b1f3a;
+        padding: 20px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 25px;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, #0b1f3a, #1769aa);
+        color: white;
+        text-align: center;
+        padding: 100px 20px;
+      }
+
+      .hero h1 {
+        font-size: 50px;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        font-size: 20px;
+        max-width: 750px;
+        margin: auto;
+        line-height: 1.6;
+      }
+
+      section {
+        padding: 70px 8%;
+      }
+
+      .title {
+        text-align: center;
+        color: #0b1f3a;
+        font-size: 35px;
+        margin-bottom: 40px;
+      }
+
+      .services {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .card {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .card h3 {
+        color: #1769aa;
+        margin-bottom: 15px;
+      }
+
+      .card p {
+        line-height: 1.6;
+      }
+
+      .back {
+        display: block;
+        width: fit-content;
+        margin: 20px auto 50px;
+        background: #1769aa;
+        color: white;
+        padding: 14px 25px;
+        border-radius: 6px;
+        text-decoration: none;
+      }
+
+      footer {
+        background: #0b1f3a;
+        color: white;
+        text-align: center;
+        padding: 25px;
+      }
+
+      @media (max-width: 768px) {
+        .services {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .hero h1 {
+          font-size: 38px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">VRS IT Solutions</div>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Software Development</h1>
+
+      <p>
+        VRS IT Solutions creates powerful and reliable software solutions
+        designed around your business requirements.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="title">Our Software Services</h2>
+
+      <div class="services">
+        <div class="card">
+          <h3>Custom Software</h3>
+          <p>
+            Software developed specifically for your company's unique
+            requirements.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Business Management</h3>
+          <p>
+            Software solutions to help businesses manage their daily operations
+            efficiently.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Billing Software</h3>
+          <p>
+            Easy-to-use billing and invoice management solutions for businesses.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Database Solutions</h3>
+          <p>
+            Secure and organized database systems for storing and managing
+            business information.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Software Maintenance</h3>
+          <p>
+            Updates, improvements and technical support for existing software
+            systems.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>API Integration</h3>
+          <p>
+            Connect your software with external services and modern digital
+            platforms.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <a href="index.html" class="back"> ← Back to Home </a>
+
+    <footer>
+      <p>© 2026 VRS IT Solutions. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

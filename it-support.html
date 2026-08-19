@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>IT Support | VRS IT Solutions</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background: #f5f7fb;
+        color: #222;
+      }
+
+      header {
+        background: #0b1f3a;
+        padding: 20px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 25px;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, #0b1f3a, #1769aa);
+        color: white;
+        text-align: center;
+        padding: 100px 20px;
+      }
+
+      .hero h1 {
+        font-size: 50px;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        font-size: 20px;
+        max-width: 750px;
+        margin: auto;
+        line-height: 1.6;
+      }
+
+      section {
+        padding: 70px 8%;
+      }
+
+      .title {
+        text-align: center;
+        color: #0b1f3a;
+        font-size: 35px;
+        margin-bottom: 40px;
+      }
+
+      .services {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .card {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .card h3 {
+        color: #1769aa;
+        margin-bottom: 15px;
+      }
+
+      .card p {
+        line-height: 1.6;
+      }
+
+      .back {
+        display: block;
+        width: fit-content;
+        margin: 20px auto 50px;
+        background: #1769aa;
+        color: white;
+        padding: 14px 25px;
+        border-radius: 6px;
+        text-decoration: none;
+      }
+
+      footer {
+        background: #0b1f3a;
+        color: white;
+        text-align: center;
+        padding: 25px;
+      }
+
+      @media (max-width: 768px) {
+        .services {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .hero h1 {
+          font-size: 38px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">VRS IT Solutions</div>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>IT Support</h1>
+
+      <p>
+        VRS IT Solutions provides reliable technical support to keep your
+        business systems running smoothly.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="title">Our IT Support Services</h2>
+
+      <div class="services">
+        <div class="card">
+          <h3>Technical Support</h3>
+          <p>
+            Assistance with common computer, software and technology-related
+            problems.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Network Support</h3>
+          <p>
+            Network setup, troubleshooting and maintenance for business
+            environments.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Computer Support</h3>
+          <p>
+            Help with computer setup, software installation and system
+            troubleshooting.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>System Maintenance</h3>
+          <p>
+            Regular maintenance to keep your IT systems reliable and efficient.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Data Backup</h3>
+          <p>
+            Backup solutions designed to help protect important business
+            information.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Remote Support</h3>
+          <p>
+            Remote assistance for troubleshooting and resolving technical
+            issues.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <a href="index.html" class="back"> ← Back to Home </a>
+
+    <footer>
+      <p>© 2026 VRS IT Solutions. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

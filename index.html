@@ -1,0 +1,3325 @@
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="VRS IT Solutions provides modern web development, app development, software development, cloud services and IT support."
+    />
+
+    <title>VRS IT Solutions | Smart Technology</title>
+
+    <style>
+      /* =========================================================
+       VRS IT SOLUTIONS
+       PREMIUM BLUE 3D ANIMATED WEBSITE
+    ========================================================= */
+
+      /* ================= RESET ================= */
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+
+      html {
+        scroll-padding-top: 80px;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #172033;
+        background: #061326;
+        overflow-x: hidden;
+      }
+
+      body.menu-open {
+        overflow: hidden;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      button,
+      input,
+      select,
+      textarea {
+        font-family: inherit;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      /* =========================================================
+       GLOBAL 3D BACKGROUND
+    ========================================================= */
+
+      .site-background {
+        position: fixed;
+        inset: 0;
+        z-index: -20;
+        overflow: hidden;
+        background:
+          radial-gradient(
+            circle at 15% 20%,
+            rgba(0, 153, 255, 0.25),
+            transparent 30%
+          ),
+          radial-gradient(
+            circle at 85% 25%,
+            rgba(0, 102, 255, 0.2),
+            transparent 30%
+          ),
+          radial-gradient(
+            circle at 50% 90%,
+            rgba(0, 212, 255, 0.16),
+            transparent 35%
+          ),
+          #061326;
+      }
+
+      /* ================= GLOWING LIGHTS ================= */
+
+      .light {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.65;
+        pointer-events: none;
+        animation: lightMove 12s ease-in-out infinite alternate;
+      }
+
+      .light.one {
+        width: 330px;
+        height: 330px;
+        background: #008cff;
+        top: 5%;
+        left: -100px;
+      }
+
+      .light.two {
+        width: 380px;
+        height: 380px;
+        background: #004cff;
+        top: 35%;
+        right: -130px;
+        animation-delay: 2s;
+      }
+
+      .light.three {
+        width: 280px;
+        height: 280px;
+        background: #00d9ff;
+        bottom: 5%;
+        left: 35%;
+        animation-delay: 4s;
+      }
+
+      @keyframes lightMove {
+        0% {
+          transform: translate(0, 0) scale(1);
+        }
+
+        50% {
+          transform: translate(80px, -60px) scale(1.15);
+        }
+
+        100% {
+          transform: translate(-50px, 70px) scale(0.9);
+        }
+      }
+
+      /* ================= 3D GRID ================= */
+
+      .grid-background {
+        position: absolute;
+        inset: -50%;
+        width: 200%;
+        height: 200%;
+
+        background-image:
+          linear-gradient(rgba(0, 174, 255, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 174, 255, 0.1) 1px, transparent 1px);
+
+        background-size: 55px 55px;
+
+        transform: perspective(600px) rotateX(60deg);
+        transform-origin: center;
+
+        animation: gridMove 18s linear infinite;
+
+        mask-image: linear-gradient(
+          to bottom,
+          transparent,
+          black 20%,
+          black 80%,
+          transparent
+        );
+
+        pointer-events: none;
+      }
+
+      @keyframes gridMove {
+        from {
+          transform: perspective(600px) rotateX(60deg) translateY(0);
+        }
+
+        to {
+          transform: perspective(600px) rotateX(60deg) translateY(55px);
+        }
+      }
+
+      /* ================= PARTICLES ================= */
+
+      .particles {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .particle {
+        position: absolute;
+
+        width: 4px;
+        height: 4px;
+
+        background: #54d9ff;
+        border-radius: 50%;
+
+        box-shadow:
+          0 0 10px #00bfff,
+          0 0 20px #008cff;
+
+        animation: particleFloat linear infinite;
+      }
+
+      .particle:nth-child(1) {
+        left: 5%;
+        top: 20%;
+        animation-duration: 8s;
+      }
+
+      .particle:nth-child(2) {
+        left: 15%;
+        top: 70%;
+        animation-duration: 11s;
+      }
+
+      .particle:nth-child(3) {
+        left: 25%;
+        top: 35%;
+        animation-duration: 9s;
+      }
+
+      .particle:nth-child(4) {
+        left: 38%;
+        top: 80%;
+        animation-duration: 13s;
+      }
+
+      .particle:nth-child(5) {
+        left: 50%;
+        top: 15%;
+        animation-duration: 10s;
+      }
+
+      .particle:nth-child(6) {
+        left: 62%;
+        top: 60%;
+        animation-duration: 12s;
+      }
+
+      .particle:nth-child(7) {
+        left: 75%;
+        top: 25%;
+        animation-duration: 9s;
+      }
+
+      .particle:nth-child(8) {
+        left: 88%;
+        top: 75%;
+        animation-duration: 14s;
+      }
+
+      .particle:nth-child(9) {
+        left: 92%;
+        top: 40%;
+        animation-duration: 10s;
+      }
+
+      .particle:nth-child(10) {
+        left: 45%;
+        top: 50%;
+        animation-duration: 15s;
+      }
+
+      .particle:nth-child(11) {
+        left: 70%;
+        top: 85%;
+        animation-duration: 12s;
+      }
+
+      .particle:nth-child(12) {
+        left: 30%;
+        top: 10%;
+        animation-duration: 9s;
+      }
+
+      @keyframes particleFloat {
+        0% {
+          transform: translateY(120px);
+          opacity: 0;
+        }
+
+        20% {
+          opacity: 1;
+        }
+
+        80% {
+          opacity: 1;
+        }
+
+        100% {
+          transform: translateY(-200px);
+          opacity: 0;
+        }
+      }
+
+      /* ================= BACKGROUND RINGS ================= */
+
+      .background-ring {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+      }
+
+      .background-ring.one {
+        width: 520px;
+        height: 520px;
+        border: 1px solid rgba(0, 234, 255, 0.2);
+        box-shadow: 0 0 40px rgba(0, 234, 255, 0.1);
+        animation: rotateOne 22s linear infinite;
+      }
+
+      .background-ring.two {
+        width: 760px;
+        height: 760px;
+        border: 1px dashed rgba(0, 234, 255, 0.14);
+        animation: rotateTwo 30s linear infinite;
+      }
+
+      .background-ring.three {
+        width: 980px;
+        height: 980px;
+        border: 1px solid rgba(123, 0, 255, 0.1);
+        animation: rotateOne 40s linear infinite;
+      }
+
+      @keyframes rotateOne {
+        from {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        to {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+
+      @keyframes rotateTwo {
+        from {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+
+        to {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+      }
+
+      /* =========================================================
+       HEADER
+    ========================================================= */
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 5000;
+
+        padding: 12px 7%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        background: rgba(4, 20, 43, 0.78);
+
+        border-bottom: 1px solid rgba(77, 184, 255, 0.25);
+
+        backdrop-filter: blur(20px);
+
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+
+        animation: headerDown 0.8s ease;
+      }
+
+      @keyframes headerDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ================= LOGO ================= */
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: white;
+        position: relative;
+        z-index: 20;
+      }
+
+      .logo-mark {
+        width: 48px;
+        height: 48px;
+
+        border-radius: 12px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        overflow: hidden;
+
+        background: #08294d;
+
+        box-shadow: 0 0 15px rgba(0, 174, 255, 0.5);
+
+        transition: 0.4s ease;
+      }
+
+      .logo-mark img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .logo:hover .logo-mark {
+        transform: rotate(8deg) scale(1.08);
+
+        box-shadow:
+          0 0 20px #00bfff,
+          0 0 40px rgba(0, 174, 255, 0.5);
+      }
+
+      .logo-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .logo-text strong {
+        font-size: 25px;
+        letter-spacing: 5px;
+        font-family: Georgia, serif;
+      }
+
+      .logo-text small {
+        margin-top: 4px;
+        color: #4db8ff;
+        font-size: 9px;
+        letter-spacing: 1.5px;
+      }
+
+      /* =========================================================
+       NAVIGATION
+    ========================================================= */
+
+      nav {
+        display: flex;
+        align-items: center;
+      }
+
+      nav > a,
+      .dropdown > a {
+        position: relative;
+        color: white;
+
+        margin-left: 25px;
+
+        transition: 0.3s;
+
+        font-weight: 500;
+      }
+
+      nav > a::after,
+      .dropdown > a::after {
+        content: "";
+
+        position: absolute;
+
+        left: 0;
+        bottom: -7px;
+
+        width: 0;
+        height: 2px;
+
+        background: #4dd9ff;
+
+        box-shadow: 0 0 10px #00bfff;
+
+        transition: 0.3s;
+      }
+
+      nav > a:hover,
+      .dropdown > a:hover {
+        color: #4dd9ff;
+
+        text-shadow: 0 0 12px #00bfff;
+      }
+
+      nav > a:hover::after,
+      .dropdown > a:hover::after {
+        width: 100%;
+      }
+
+      /* ================= MENU BUTTON ================= */
+
+      .menu-btn {
+        display: none;
+
+        border: none;
+        background: transparent;
+
+        color: white;
+
+        font-size: 30px;
+
+        width: 45px;
+        height: 45px;
+
+        border-radius: 10px;
+
+        transition: 0.3s;
+
+        position: relative;
+        z-index: 20;
+      }
+
+      .menu-btn:hover {
+        background: rgba(0, 174, 255, 0.15);
+        color: #4dd9ff;
+      }
+
+      /* =========================================================
+       SERVICES DROPDOWN
+    ========================================================= */
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-menu {
+        position: absolute;
+
+        top: calc(100% + 15px);
+        left: 10px;
+
+        width: 250px;
+
+        padding: 8px;
+
+        background: linear-gradient(
+          145deg,
+          rgba(4, 20, 43, 0.98),
+          rgba(4, 40, 75, 0.98)
+        );
+
+        border: 1px solid rgba(77, 184, 255, 0.35);
+
+        border-radius: 14px;
+
+        box-shadow:
+          0 20px 50px rgba(0, 0, 0, 0.45),
+          0 0 30px rgba(0, 153, 255, 0.15);
+
+        backdrop-filter: blur(20px);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateY(12px) scale(0.96);
+
+        transition:
+          opacity 0.3s ease,
+          transform 0.3s ease,
+          visibility 0.3s ease;
+
+        z-index: 6000;
+      }
+
+      .dropdown:hover .dropdown-menu,
+      .dropdown.services-open .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+
+        transform: translateY(0) scale(1);
+      }
+
+      .dropdown-menu a {
+        display: block;
+
+        margin: 0;
+
+        padding: 13px 15px;
+
+        border-radius: 9px;
+
+        color: white;
+
+        transition: 0.3s;
+      }
+
+      .dropdown-menu a:hover {
+        color: #4dd9ff;
+
+        background: linear-gradient(
+          90deg,
+          rgba(0, 140, 255, 0.25),
+          rgba(0, 217, 255, 0.08)
+        );
+
+        transform: translateX(5px);
+      }
+
+      /* =========================================================
+       COMMON SECTION
+    ========================================================= */
+
+      section {
+        position: relative;
+        padding: 110px 8%;
+        overflow: hidden;
+      }
+
+      section::before {
+        content: "";
+
+        position: absolute;
+
+        width: 300px;
+        height: 300px;
+
+        border-radius: 50%;
+
+        background: radial-gradient(
+          circle,
+          rgba(0, 174, 255, 0.1),
+          transparent 70%
+        );
+
+        filter: blur(30px);
+
+        pointer-events: none;
+
+        animation: sectionGlow 8s ease-in-out infinite alternate;
+      }
+
+      @keyframes sectionGlow {
+        from {
+          transform: translate(-20px, -10px);
+        }
+
+        to {
+          transform: translate(50px, 30px);
+        }
+      }
+
+      /* =========================================================
+       HERO
+    ========================================================= */
+
+      .hero {
+        min-height: 750px;
+
+        display: flex;
+        align-items: center;
+
+        overflow: hidden;
+
+        color: white;
+
+        background: linear-gradient(
+          135deg,
+          rgba(4, 20, 43, 0.88),
+          rgba(0, 74, 140, 0.52)
+        );
+
+        border-bottom: 1px solid rgba(77, 184, 255, 0.2);
+      }
+
+      .hero-content {
+        max-width: 720px;
+
+        position: relative;
+
+        z-index: 10;
+      }
+
+      .hero-content img {
+        width: 300px;
+        max-width: 90%;
+
+        border-radius: 15px;
+
+        margin-bottom: 25px;
+
+        filter: drop-shadow(0 0 15px rgba(0, 200, 255, 0.35));
+
+        animation: logoFloat 4s ease-in-out infinite;
+      }
+
+      @keyframes logoFloat {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .hero-content h1 {
+        font-size: clamp(42px, 6vw, 70px);
+
+        line-height: 1.05;
+
+        margin-bottom: 25px;
+
+        animation: heroTitle 1.2s ease both;
+      }
+
+      .hero-content h1 span {
+        color: #4dd9ff;
+
+        text-shadow:
+          0 0 10px rgba(0, 217, 255, 0.6),
+          0 0 30px rgba(0, 153, 255, 0.4);
+      }
+
+      .hero-content p {
+        font-size: 19px;
+
+        line-height: 1.8;
+
+        max-width: 650px;
+
+        color: #d7edff;
+
+        animation: heroText 1.5s ease both;
+      }
+
+      /* ================= BUTTON ================= */
+
+      .btn {
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+
+        overflow: hidden;
+
+        margin-top: 30px;
+
+        padding: 15px 30px;
+
+        min-height: 50px;
+
+        border-radius: 9px;
+
+        background: linear-gradient(135deg, #4dd9ff, #008cff);
+
+        color: #031225;
+
+        font-weight: bold;
+
+        box-shadow: 0 0 15px rgba(0, 174, 255, 0.45);
+
+        transition:
+          transform 0.35s,
+          box-shadow 0.35s;
+
+        animation: heroButton 1.8s ease both;
+      }
+
+      .btn::before {
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        left: -130%;
+
+        width: 80%;
+        height: 100%;
+
+        background: linear-gradient(
+          110deg,
+          transparent,
+          rgba(255, 255, 255, 0.6),
+          transparent
+        );
+
+        transform: skewX(-20deg);
+
+        transition: 0.65s;
+      }
+
+      .btn:hover::before {
+        left: 140%;
+      }
+
+      .btn:hover {
+        transform: translateY(-5px) scale(1.04);
+
+        box-shadow:
+          0 0 20px #00c8ff,
+          0 0 45px rgba(0, 140, 255, 0.5);
+      }
+
+      /* =========================================================
+       HERO 3D ORBS
+    ========================================================= */
+
+      .tech-orb {
+        position: absolute;
+
+        border-radius: 50%;
+
+        border: 1px solid rgba(90, 220, 255, 0.45);
+
+        box-shadow:
+          inset 0 0 30px rgba(0, 174, 255, 0.25),
+          0 0 30px rgba(0, 174, 255, 0.25);
+
+        right: 8%;
+        top: 18%;
+
+        pointer-events: none;
+
+        animation:
+          orbRotate 12s linear infinite,
+          orbFloat 6s ease-in-out infinite;
+      }
+
+      .tech-orb::before,
+      .tech-orb::after {
+        content: "";
+
+        position: absolute;
+
+        inset: 12%;
+
+        border: 1px solid rgba(77, 217, 255, 0.4);
+
+        border-radius: 50%;
+
+        transform: rotateX(65deg);
+      }
+
+      .tech-orb::after {
+        transform: rotateY(65deg);
+      }
+
+      .orb1 {
+        width: 470px;
+        height: 470px;
+      }
+
+      .orb2 {
+        width: 330px;
+        height: 330px;
+
+        right: 12%;
+        top: 28%;
+
+        animation-duration: 9s;
+      }
+
+      .orb3 {
+        width: 180px;
+        height: 180px;
+
+        right: 20%;
+        top: 39%;
+
+        animation-duration: 6s;
+      }
+
+      @keyframes orbRotate {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes orbFloat {
+        0%,
+        100% {
+          margin-top: 0;
+        }
+
+        50% {
+          margin-top: -25px;
+        }
+      }
+
+      @keyframes heroTitle {
+        from {
+          opacity: 0;
+
+          transform: translateY(60px);
+
+          filter: blur(10px);
+        }
+
+        to {
+          opacity: 1;
+
+          transform: translateY(0);
+
+          filter: blur(0);
+        }
+      }
+
+      @keyframes heroText {
+        from {
+          opacity: 0;
+
+          transform: translateY(40px);
+        }
+
+        to {
+          opacity: 1;
+
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes heroButton {
+        from {
+          opacity: 0;
+
+          transform: translateY(30px) scale(0.9);
+        }
+
+        to {
+          opacity: 1;
+
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      /* =========================================================
+       WHITE GLASS SECTIONS
+    ========================================================= */
+
+      #projects {
+        background: linear-gradient(
+          180deg,
+          rgba(245, 250, 255, 0.97),
+          rgba(230, 243, 255, 0.95)
+        );
+      }
+
+      .about {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.98),
+          rgba(225, 242, 255, 0.95)
+        );
+      }
+
+      .contact {
+        background: linear-gradient(
+          135deg,
+          rgba(226, 241, 255, 0.96),
+          rgba(244, 249, 255, 0.98)
+        );
+      }
+
+      /* =========================================================
+       TITLES
+    ========================================================= */
+
+      .our_servi {
+        width: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(226, 241, 255, 0.96),
+          rgba(244, 249, 255, 0.98)
+        );
+        display: grid;
+        padding: 10px;
+        border-radius: 20px;
+      }
+
+      .title {
+        text-align: center;
+
+        font-size: 40px;
+
+        color: #082344;
+
+        margin-bottom: 15px;
+
+        position: relative;
+
+        z-index: 2;
+      }
+
+      .title::after {
+        content: "";
+
+        display: block;
+
+        width: 70px;
+        height: 4px;
+
+        margin: 15px auto 0;
+
+        border-radius: 10px;
+
+        background: linear-gradient(90deg, #008cff, #4dd9ff);
+
+        box-shadow: 0 0 12px rgba(0, 174, 255, 0.6);
+
+        animation: titleLine 5s ease-in-out infinite;
+      }
+
+      @keyframes titleLine {
+        0%,
+        100% {
+          width: 70px;
+        }
+
+        50% {
+          width: 120px;
+        }
+      }
+
+      .subtitle {
+        max-width: 700px;
+
+        margin: 0 auto 55px;
+
+        text-align: center;
+
+        color: #52647a;
+
+        line-height: 1.8;
+
+        position: relative;
+
+        z-index: 2;
+      }
+
+      /* =========================================================
+       SERVICES
+    ========================================================= */
+
+      .services {
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 25px;
+
+        position: relative;
+
+        z-index: 5;
+      }
+
+      .card {
+        position: relative;
+
+        padding: 35px;
+
+        border-radius: 18px;
+
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.96),
+          rgba(236, 247, 255, 0.96)
+        );
+
+        border: 1px solid rgba(0, 140, 255, 0.15);
+
+        box-shadow: 0 10px 35px rgba(10, 70, 120, 0.1);
+
+        overflow: hidden;
+
+        transition:
+          transform 0.5s,
+          box-shadow 0.5s,
+          border-color 0.5s;
+      }
+
+      .card::before {
+        content: "";
+
+        position: absolute;
+
+        width: 160px;
+        height: 160px;
+
+        right: -80px;
+        top: -80px;
+
+        border-radius: 50%;
+
+        background: #00aaff;
+
+        opacity: 0.08;
+
+        transition: 0.5s;
+      }
+
+      .card::after {
+        content: "";
+
+        position: absolute;
+
+        left: -100%;
+
+        top: 0;
+
+        width: 80%;
+        height: 100%;
+
+        background: linear-gradient(
+          100deg,
+          transparent,
+          rgba(0, 174, 255, 0.07),
+          transparent
+        );
+
+        transform: skewX(-20deg);
+
+        transition: 0.8s;
+      }
+
+      .card:hover {
+        transform: translateY(-12px) perspective(800px) rotateX(2deg);
+
+        border-color: rgba(0, 153, 255, 0.4);
+
+        box-shadow:
+          0 20px 45px rgba(0, 105, 180, 0.18),
+          0 0 25px rgba(0, 174, 255, 0.12);
+      }
+
+      .card:hover::before {
+        transform: scale(2);
+      }
+
+      .card:hover::after {
+        left: 140%;
+      }
+
+      .icon {
+        font-size: 42px;
+
+        margin-bottom: 20px;
+
+        display: inline-block;
+
+        filter: drop-shadow(0 0 8px rgba(0, 153, 255, 0.35));
+
+        transition: 0.4s;
+      }
+
+      .card:hover .icon {
+        transform: translateY(-8px) rotate(8deg) scale(1.15);
+      }
+
+      .card h3 {
+        color: #0875bd;
+
+        margin-bottom: 14px;
+
+        position: relative;
+        z-index: 2;
+      }
+
+      .card p {
+        color: #56677b;
+
+        line-height: 1.7;
+
+        position: relative;
+        z-index: 2;
+      }
+
+      .card a {
+        display: inline-block;
+
+        margin-top: 20px;
+
+        color: #0875bd;
+
+        font-weight: bold;
+
+        transition: 0.3s;
+
+        position: relative;
+        z-index: 3;
+      }
+
+      .card a:hover {
+        color: #00aaff;
+
+        transform: translateX(5px);
+      }
+
+      /* ================= STAGGER ================= */
+
+      .services .card:nth-child(1) {
+        transition-delay: 0.05s;
+      }
+
+      .services .card:nth-child(2) {
+        transition-delay: 0.1s;
+      }
+
+      .services .card:nth-child(3) {
+        transition-delay: 0.15s;
+      }
+
+      .services .card:nth-child(4) {
+        transition-delay: 0.2s;
+      }
+
+      .services .card:nth-child(5) {
+        transition-delay: 0.25s;
+      }
+
+      .services .card:nth-child(6) {
+        transition-delay: 0.3s;
+      }
+
+      /* =========================================================
+       SECTION RINGS
+    ========================================================= */
+
+      .section-ring {
+        position: absolute;
+
+        border-radius: 50%;
+
+        pointer-events: none;
+
+        border: 1px solid rgba(0, 174, 255, 0.12);
+
+        animation: rotateOne 25s linear infinite;
+      }
+
+      .section-ring.one {
+        width: 450px;
+        height: 450px;
+
+        right: -220px;
+        top: 80px;
+      }
+
+      .section-ring.two {
+        width: 280px;
+        height: 280px;
+
+        left: -140px;
+        bottom: 80px;
+
+        border-style: dashed;
+
+        animation: rotateTwo 20s linear infinite;
+      }
+
+      /* =========================================================
+       STATS
+    ========================================================= */
+
+      .stats {
+        color: white;
+        display: grid;
+
+        grid-template-columns: repeat(4, 1fr);
+
+        text-align: center;
+
+        gap: 20px;
+
+        position: relative;
+
+        overflow: hidden;
+      }
+
+      .stats::before {
+        content: "";
+
+        position: absolute;
+
+        width: 500px;
+        height: 500px;
+
+        border-radius: 50%;
+
+        border: 1px solid rgba(0, 200, 255, 0.15);
+
+        left: 50%;
+        top: -300px;
+
+        transform: translateX(-50%);
+
+        box-shadow: 0 0 80px rgba(0, 174, 255, 0.15);
+
+        animation: statsRotate 18s linear infinite;
+      }
+
+      @keyframes statsRotate {
+        from {
+          transform: translateX(-50%) rotate(0deg);
+        }
+
+        to {
+          transform: translateX(-50%) rotate(360deg);
+        }
+      }
+
+      .stat {
+        position: relative;
+
+        z-index: 2;
+
+        padding: 20px;
+
+        transition: 0.4s;
+      }
+
+      .stat:hover {
+        transform: translateY(-8px) scale(1.05);
+      }
+
+      .stat h2 {
+        font-size: 48px;
+
+        color: #4dd9ff;
+
+        text-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+      }
+
+      .stat p {
+        margin-top: 8px;
+
+        color: #d7edff;
+      }
+
+      /* =========================================================
+       ABOUT
+    ========================================================= */
+
+      .about {
+        text-align: center;
+      }
+
+      .about p {
+        max-width: 900px;
+
+        margin: auto;
+
+        font-size: 18px;
+
+        line-height: 1.9;
+
+        color: #53657a;
+      }
+
+      #ab_vrs {
+        font-weight: bold;
+      }
+
+      /* =========================================================
+       PROJECTS
+    ========================================================= */
+
+      .projects {
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 25px;
+
+        position: relative;
+
+        z-index: 5;
+      }
+
+      .project {
+        background: white;
+
+        border-radius: 18px;
+
+        overflow: hidden;
+
+        box-shadow: 0 10px 30px rgba(0, 60, 120, 0.1);
+
+        transition: 0.5s;
+      }
+
+      .project:hover {
+        transform: translateY(-12px) scale(1.01);
+
+        box-shadow: 0 20px 45px rgba(0, 100, 180, 0.18);
+      }
+
+      .project-image {
+        height: 230px;
+
+        position: relative;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        color: white;
+
+        font-size: 24px;
+
+        font-weight: bold;
+
+        overflow: hidden;
+      }
+
+      .project-image::before {
+        content: "";
+
+        position: absolute;
+
+        width: 200%;
+        height: 200%;
+
+        background: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 20px,
+          rgba(255, 255, 255, 0.07) 21px,
+          rgba(255, 255, 255, 0.07) 22px
+        );
+
+        animation: projectMove 12s linear infinite;
+      }
+
+      @keyframes projectMove {
+        from {
+          transform: translate(0, 0);
+        }
+
+        to {
+          transform: translate(-80px, 80px);
+        }
+      }
+
+      .web-project {
+        background: linear-gradient(135deg, #008cff, #062b55);
+      }
+
+      .app-project {
+        background: linear-gradient(135deg, #0066ff, #6426b5);
+      }
+
+      .software-project {
+        background: linear-gradient(135deg, #087f8c, #041b3b);
+      }
+
+      .project-image span {
+        position: relative;
+
+        z-index: 3;
+
+        text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+
+        transition: 0.4s;
+      }
+
+      .project-image a {
+        position: absolute;
+
+        z-index: 5;
+
+        bottom: -60px;
+
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        background: white;
+
+        color: #0875bd;
+
+        padding: 11px 20px;
+
+        border-radius: 7px;
+
+        transition: 0.5s;
+
+        opacity: 0;
+      }
+
+      .project:hover .project-image a {
+        bottom: 25px;
+
+        opacity: 1;
+      }
+
+      .project:hover .project-image span {
+        transform: translateY(-30px);
+      }
+
+      .project-content {
+        padding: 25px;
+      }
+
+      .project-content h3 {
+        color: #0875bd;
+
+        margin-bottom: 10px;
+      }
+
+      .project-content p {
+        color: #58697b;
+
+        line-height: 1.7;
+      }
+
+      /* =========================================================
+       CONTACT
+    ========================================================= */
+
+      .contact-container {
+        max-width: 1050px;
+
+        margin: auto;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1.3fr;
+
+        gap: 35px;
+
+        position: relative;
+
+        z-index: 5;
+      }
+
+      .contact-info,
+      .contact-form {
+        border-radius: 18px;
+
+        padding: 40px;
+
+        background: linear-gradient(145deg, #09284b, #0a4c80);
+
+        box-shadow: 0 20px 45px rgba(0, 60, 120, 0.18);
+
+        border: 1px solid rgba(77, 217, 255, 0.15);
+      }
+
+      .contact-info {
+        color: white;
+      }
+
+      .contact-info h2 {
+        font-size: 32px;
+
+        margin-bottom: 20px;
+      }
+
+      .contact-info p {
+        line-height: 1.7;
+
+        color: #d9efff;
+      }
+
+      .info-item {
+        display: flex;
+
+        gap: 15px;
+
+        margin: 25px 0;
+
+        color: #d9efff;
+
+        transition: 0.3s;
+      }
+
+      .info-item:hover {
+        transform: translateX(8px);
+
+        color: #4dd9ff;
+      }
+
+      .contact-form input,
+      .contact-form select,
+      .contact-form textarea {
+        width: 100%;
+
+        padding: 15px;
+
+        margin-bottom: 17px;
+
+        border: 1px solid rgba(255, 255, 255, 0.2);
+
+        border-radius: 8px;
+
+        background: rgba(255, 255, 255, 0.96);
+
+        color: #172033;
+
+        outline: none;
+
+        transition: 0.3s;
+      }
+
+      .contact-form textarea {
+        resize: vertical;
+        min-height: 140px;
+      }
+
+      .contact-form input:focus,
+      .contact-form select:focus,
+      .contact-form textarea:focus {
+        border-color: #4dd9ff;
+
+        box-shadow:
+          0 0 0 3px rgba(77, 217, 255, 0.15),
+          0 0 15px rgba(0, 174, 255, 0.2);
+
+        transform: translateY(-2px);
+      }
+
+      .contact-form button {
+        border: none;
+      }
+
+      /* =========================================================
+       FOOTER
+    ========================================================= */
+
+      footer {
+        position: relative;
+
+        background: linear-gradient(135deg, #020d1d, #062a4d, #020d1d);
+
+        color: white;
+
+        padding: 70px 8% 20px;
+
+        overflow: hidden;
+      }
+
+      footer::before {
+        content: "";
+
+        position: absolute;
+
+        width: 600px;
+        height: 600px;
+
+        border-radius: 50%;
+
+        border: 1px solid rgba(0, 174, 255, 0.12);
+
+        top: -450px;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        animation: footerRing 20s linear infinite;
+      }
+
+      @keyframes footerRing {
+        to {
+          transform: translateX(-50%) rotate(360deg);
+        }
+      }
+
+      .footer-container {
+        max-width: 1200px;
+
+        margin: auto;
+
+        display: grid;
+
+        grid-template-columns:
+          1.5fr
+          1fr
+          1.3fr
+          1fr;
+
+        gap: 40px;
+
+        position: relative;
+
+        z-index: 2;
+      }
+
+      .footer-box h3 {
+        color: #4dd9ff;
+
+        margin-bottom: 20px;
+      }
+
+      .footer-box p,
+      .footer-box a {
+        color: #b9d3e8;
+
+        line-height: 1.7;
+
+        margin-bottom: 12px;
+      }
+
+      .footer-box a {
+        display: block;
+
+        transition: 0.3s;
+      }
+
+      .footer-box a:hover {
+        color: #4dd9ff;
+
+        transform: translateX(5px);
+      }
+
+      .footer-logo {
+        width: 58px;
+        height: 58px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 14px;
+
+        border: 1px solid #4dd9ff;
+
+        color: #4dd9ff;
+
+        font-size: 25px;
+
+        font-weight: bold;
+
+        margin-bottom: 15px;
+
+        box-shadow: 0 0 15px rgba(0, 174, 255, 0.3);
+
+        animation: footerLogo 3s ease-in-out infinite;
+      }
+
+      @keyframes footerLogo {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-7px) rotate(3deg);
+        }
+      }
+
+      .social {
+        display: flex;
+
+        gap: 10px;
+
+        margin-top: 20px;
+      }
+
+      .social a {
+        width: 40px;
+        height: 40px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        background: rgba(0, 140, 255, 0.15);
+
+        border: 1px solid rgba(77, 217, 255, 0.25);
+
+        border-radius: 50%;
+
+        color: white;
+
+        margin: 0;
+
+        transition: 0.3s;
+      }
+
+      .social a:hover {
+        background: #008cff;
+
+        transform: translateY(-5px);
+
+        box-shadow: 0 0 15px rgba(0, 174, 255, 0.5);
+      }
+
+      .footer-bottom {
+        max-width: 1200px;
+
+        margin: 50px auto 0;
+
+        padding-top: 20px;
+
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        position: relative;
+
+        z-index: 2;
+      }
+
+      .footer-bottom p {
+        color: #819bb2;
+      }
+
+      .top-btn {
+        width: 42px;
+        height: 42px;
+
+        display: flex !important;
+
+        align-items: center;
+        justify-content: center;
+
+        background: #008cff;
+
+        color: white !important;
+
+        border-radius: 50%;
+
+        transition: 0.3s;
+      }
+
+      .top-btn:hover {
+        transform: translateY(-5px);
+
+        background: #4dd9ff;
+
+        color: #031225 !important;
+      }
+
+      /* =========================================================
+       SCROLL REVEAL
+    ========================================================= */
+
+      .reveal {
+        opacity: 0;
+
+        transform: translateY(70px) scale(0.94);
+
+        filter: blur(5px);
+
+        transition:
+          opacity 0.9s ease,
+          transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1),
+          filter 0.9s ease;
+      }
+
+      .reveal.show {
+        opacity: 1;
+
+        transform: translateY(0) scale(1);
+
+        filter: blur(0);
+      }
+
+      /* =========================================================
+       FLOATING SHINE
+    ========================================================= */
+
+      .shine {
+        position: absolute;
+
+        width: 120px;
+        height: 120px;
+
+        border-radius: 50%;
+
+        background: radial-gradient(
+          circle,
+          rgba(77, 217, 255, 0.2),
+          transparent 70%
+        );
+
+        filter: blur(10px);
+
+        pointer-events: none;
+
+        animation: shineFloat 7s ease-in-out infinite;
+      }
+
+      @keyframes shineFloat {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+
+        50% {
+          transform: translate(80px, -50px);
+        }
+      }
+
+      /* =========================================================
+       MOBILE
+    ========================================================= */
+
+      @media (max-width: 900px) {
+        .services,
+        .projects {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .footer-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .tech-orb.orb1 {
+          width: 380px;
+          height: 380px;
+
+          right: -100px;
+        }
+
+        .tech-orb.orb2 {
+          right: -40px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        header {
+          padding: 12px 20px;
+        }
+
+        .logo-text strong {
+          font-size: 22px;
+        }
+
+        .logo-text small {
+          display: none;
+        }
+
+        /* ================= MOBILE MENU ================= */
+
+        .menu-btn {
+          display: flex;
+
+          align-items: center;
+          justify-content: center;
+        }
+
+        nav {
+          display: none;
+
+          position: absolute;
+
+          left: 0;
+          top: 100%;
+
+          width: 100%;
+
+          flex-direction: column;
+
+          align-items: stretch;
+
+          background: rgba(4, 20, 43, 0.98);
+
+          padding: 10px 0;
+
+          border-bottom: 1px solid rgba(77, 184, 255, 0.2);
+
+          backdrop-filter: blur(20px);
+
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+
+          max-height: calc(100vh - 72px);
+
+          overflow-y: auto;
+        }
+
+        nav.active {
+          display: flex;
+
+          animation: mobileMenu 0.3s ease;
+        }
+
+        @keyframes mobileMenu {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        nav > a,
+        .dropdown > a {
+          width: 100%;
+
+          text-align: center;
+
+          margin: 0;
+
+          padding: 15px;
+
+          color: white;
+        }
+
+        nav > a::after,
+        .dropdown > a::after {
+          display: none;
+        }
+
+        .dropdown {
+          width: 100%;
+
+          text-align: center;
+        }
+
+        /* IMPORTANT:
+         Desktop hover is disabled on mobile.
+         Dropdown is controlled by JS click.
+      */
+
+        .dropdown:hover .dropdown-menu {
+          opacity: 0;
+
+          visibility: hidden;
+
+          transform: translateY(10px);
+        }
+
+        .dropdown.services-open .dropdown-menu {
+          opacity: 1;
+
+          visibility: visible;
+
+          transform: none;
+        }
+
+        .dropdown-menu {
+          position: static;
+
+          width: 92%;
+
+          margin: 0 auto 5px;
+
+          display: none;
+
+          opacity: 1;
+
+          visibility: visible;
+
+          transform: none;
+
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .dropdown.services-open .dropdown-menu {
+          display: block;
+
+          animation: dropdownMobile 0.3s ease;
+        }
+
+        @keyframes dropdownMobile {
+          from {
+            opacity: 0;
+            transform: translateY(-8px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .dropdown-menu a {
+          text-align: center;
+
+          padding: 12px;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+          min-height: 680px;
+
+          text-align: center;
+
+          padding: 80px 20px;
+        }
+
+        .hero-content {
+          margin: auto;
+
+          z-index: 20;
+        }
+
+        .hero-content h1 {
+          font-size: 42px;
+        }
+
+        .hero-content img {
+          width: 240px;
+        }
+
+        .hero-content p {
+          font-size: 17px;
+        }
+
+        .hero-content .btn {
+          margin-top: 25px;
+        }
+
+        .tech-orb.orb {
+          width: 300px;
+          height: 300px;
+
+          right: -130px;
+          top: 25%;
+
+          opacity: 0.65;
+        }
+
+        /* ================= SECTIONS ================= */
+
+        section {
+          padding: 75px 20px;
+        }
+
+        .title {
+          font-size: 34px;
+        }
+
+        .subtitle {
+          margin-bottom: 40px;
+        }
+
+        .services,
+        .projects {
+          grid-template-columns: 1fr;
+        }
+
+        /* ================= STATS ================= */
+
+        .stats {
+          grid-template-columns: repeat(2, 1fr);
+
+          padding: 65px 20px;
+        }
+
+        .stat h2 {
+          font-size: 38px;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-container {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-info,
+        .contact-form {
+          padding: 25px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        .footer-container {
+          grid-template-columns: 1fr;
+
+          text-align: center;
+        }
+
+        .footer-logo {
+          margin: auto auto 15px;
+        }
+
+        .social {
+          justify-content: center;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+
+          gap: 20px;
+
+          text-align: center;
+        }
+
+        .background-ring.three,
+        .background-ring.two {
+          opacity: 0.4;
+        }
+      }
+
+      /* =========================================================
+       SMALL MOBILE
+    ========================================================= */
+
+      @media (max-width: 480px) {
+        .logo-mark {
+          width: 42px;
+          height: 42px;
+        }
+
+        .logo-text strong {
+          font-size: 19px;
+          letter-spacing: 3px;
+        }
+
+        .hero {
+          min-height: 650px;
+        }
+
+        .hero-content h1 {
+          font-size: 36px;
+        }
+
+        .hero-content p {
+          font-size: 16px;
+        }
+
+        .title {
+          font-size: 30px;
+        }
+
+        .card {
+          padding: 28px;
+        }
+
+        .stats {
+          gap: 10px;
+        }
+
+        .stat {
+          padding: 15px 5px;
+        }
+
+        .stat h2 {
+          font-size: 32px;
+        }
+
+        .stat p {
+          font-size: 14px;
+        }
+      }
+
+      /* =========================================================
+       REDUCE MOTION ACCESSIBILITY
+    ========================================================= */
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+
+      /* =========================================================
+   PREMIUM ORB REFINEMENT
+   Existing design ko preserve karte hue subtle 3D effect
+========================================================= */
+
+      .tech-orb {
+        right: 10%;
+        top: 24%;
+
+        opacity: 0.42;
+
+        border: 1px solid rgba(77, 217, 255, 0.28);
+
+        box-shadow:
+          inset 0 0 25px rgba(0, 174, 255, 0.12),
+          0 0 25px rgba(0, 174, 255, 0.12);
+
+        filter: blur(0.15px);
+
+        animation:
+          orbRotate 18s linear infinite,
+          orbFloat 8s ease-in-out infinite;
+      }
+
+      /* Inner rings ko subtle rakha gaya hai */
+      .tech-orb::before,
+      .tech-orb::after {
+        inset: 16%;
+
+        border: 1px solid rgba(77, 217, 255, 0.22);
+
+        box-shadow: 0 0 15px rgba(0, 174, 255, 0.08);
+      }
+
+      .tech-orb::before {
+        transform: rotateX(65deg) rotateZ(8deg);
+      }
+
+      .tech-orb::after {
+        transform: rotateY(65deg) rotateZ(-8deg);
+      }
+
+      /* Main orb */
+      .orb1 {
+        width: 390px;
+        height: 390px;
+      }
+
+      /* Second orb */
+      .orb2 {
+        width: 270px;
+        height: 270px;
+
+        right: 14%;
+        top: 31%;
+
+        opacity: 0.32;
+
+        animation-duration: 22s, 9s;
+      }
+
+      /* =========================================================
+   PREMIUM ABOUT BACKGROUND
+   Animation piche se clearly visible rahega
+========================================================= */
+
+      .about {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.82),
+          rgba(225, 242, 255, 0.72)
+        );
+
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+
+        border-top: 1px solid rgba(77, 184, 255, 0.18);
+        border-bottom: 1px solid rgba(77, 184, 255, 0.18);
+
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.7),
+          inset 0 -1px 0 rgba(0, 140, 255, 0.06);
+
+        position: relative;
+        z-index: 1;
+      }
+
+      /* About ke content ko background animation ke upar rakhein */
+      .about .title,
+      .about p {
+        position: relative;
+        z-index: 3;
+      }
+
+      /* =========================================================
+   PREMIUM CONTACT BACKGROUND
+========================================================= */
+
+      .contact {
+        background: linear-gradient(
+          135deg,
+          rgba(226, 241, 255, 0.78),
+          rgba(244, 249, 255, 0.76)
+        );
+
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+
+        border-top: 1px solid rgba(77, 184, 255, 0.2);
+
+        border-bottom: 1px solid rgba(77, 184, 255, 0.18);
+
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.75),
+          inset 0 -1px 0 rgba(0, 140, 255, 0.06);
+
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Contact content ko clear rakhein */
+      .contact > .title,
+      .contact > .subtitle,
+      .contact-container {
+        position: relative;
+        z-index: 3;
+      }
+
+      /* =========================================================
+   ABOUT / CONTACT GLOW
+   Background animation visible but premium/subtle
+========================================================= */
+
+      .about::after,
+      .contact::after {
+        content: "";
+
+        position: absolute;
+
+        width: 420px;
+        height: 420px;
+
+        border-radius: 50%;
+
+        background: radial-gradient(
+          circle,
+          rgba(0, 174, 255, 0.13),
+          rgba(0, 174, 255, 0.04) 35%,
+          transparent 70%
+        );
+
+        filter: blur(20px);
+
+        pointer-events: none;
+
+        z-index: 0;
+
+        animation: premiumSectionGlow 10s ease-in-out infinite alternate;
+      }
+
+      .about::after {
+        left: -170px;
+        top: 5%;
+      }
+
+      .contact::after {
+        right: -170px;
+        bottom: 0;
+        animation-delay: 2s;
+      }
+
+      @keyframes premiumSectionGlow {
+        from {
+          transform: translate3d(0, 0, 0) scale(0.95);
+          opacity: 0.55;
+        }
+
+        to {
+          transform: translate3d(70px, -25px, 0) scale(1.08);
+          opacity: 0.9;
+        }
+      }
+
+      /* =========================================================
+   MOBILE ORB
+   Center me, subtle aur premium
+========================================================= */
+
+      @media (max-width: 768px) {
+        .tech-orb {
+          left: 50%;
+          right: auto;
+
+          top: 58%;
+
+          transform: translateX(-50%);
+
+          opacity: 0.25;
+
+          pointer-events: none;
+        }
+
+        .orb1 {
+          width: 250px;
+          height: 250px;
+        }
+
+        .orb2 {
+          width: 175px;
+          height: 175px;
+
+          left: 50%;
+          right: auto;
+
+          top: 64%;
+
+          opacity: 0.18;
+        }
+
+        /* Orb ko mobile par center ke around float karayein */
+        .orb1 {
+          animation:
+            orbRotate 22s linear infinite,
+            mobileOrbFloat 7s ease-in-out infinite;
+        }
+
+        .orb2 {
+          animation:
+            orbRotate 26s linear infinite,
+            mobileOrbFloat 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes mobileOrbFloat {
+          0%,
+          100% {
+            margin-left: -50%;
+            margin-top: 0;
+          }
+
+          50% {
+            margin-left: -50%;
+            margin-top: -12px;
+          }
+        }
+
+        /* Mobile About */
+        .about {
+          background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.76),
+            rgba(225, 242, 255, 0.68)
+          );
+
+          backdrop-filter: blur(3px);
+          -webkit-backdrop-filter: blur(3px);
+        }
+
+        /* Mobile Contact */
+        .contact {
+          background: linear-gradient(
+            135deg,
+            rgba(226, 241, 255, 0.72),
+            rgba(244, 249, 255, 0.74)
+          );
+
+          backdrop-filter: blur(3px);
+          -webkit-backdrop-filter: blur(3px);
+        }
+
+        .about::after,
+        .contact::after {
+          width: 280px;
+          height: 280px;
+
+          opacity: 0.55;
+        }
+      }
+
+      /* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+      @media (max-width: 480px) {
+        .orb1 {
+          width: 210px;
+          height: 210px;
+        }
+
+        .orb2 {
+          width: 145px;
+          height: 145px;
+
+          top: 63%;
+        }
+
+        .tech-orb {
+          top: 60%;
+          opacity: 0.2;
+        }
+
+        .about::after,
+        .contact::after {
+          width: 230px;
+          height: 230px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ========================================================
+       GLOBAL 3D BACKGROUND
+  ========================================================= -->
+
+    <div class="site-background">
+      <div class="light one"></div>
+      <div class="light two"></div>
+      <div class="light three"></div>
+
+      <div class="grid-background"></div>
+
+      <div class="background-ring one"></div>
+      <div class="background-ring two"></div>
+      <div class="background-ring three"></div>
+
+      <div class="particles">
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+      </div>
+    </div>
+
+    <!-- ========================================================
+       HEADER
+  ========================================================= -->
+
+    <header id="header">
+      <a href="#home" class="logo">
+        <div class="logo-mark">
+          <img src="vrs_logo.jpeg" alt="VRS IT Solutions Logo" />
+        </div>
+
+        <div class="logo-text">
+          <strong>VRS</strong>
+          <small>IT SOLUTIONS & DIGITAL MARKETING</small>
+        </div>
+      </a>
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav id="mainNav">
+        <a href="#home">Home</a>
+
+        <!-- SERVICES DROPDOWN -->
+
+        <div class="dropdown" id="servicesDropdown">
+          <a
+            href="#services"
+            id="servicesToggle"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Services ▾
+          </a>
+
+          <div class="dropdown-menu">
+            <a href="web-development.html"> 💻 Web Development </a>
+
+            <a href="app-development.html"> 📱 App Development </a>
+
+            <a href="software-development.html"> ⚙️ Software Development </a>
+
+            <a href="cloud-services.html"> ☁️ Cloud Services </a>
+
+            <a href="it-support.html"> 🛠️ IT Support </a>
+
+            <a href="#contact"> 🔒 IT Security </a>
+          </div>
+        </div>
+
+        <a href="#about">About</a>
+
+        <a href="#projects">Projects</a>
+
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- ========================================================
+       HERO
+  ========================================================= -->
+
+    <section class="hero" id="home">
+      <div class="shine" style="left: 10%; top: 20%"></div>
+      <div class="shine" style="right: 15%; bottom: 10%"></div>
+
+      <!-- 3D animated objects -->
+
+      <div class="tech-orb orb1"></div>
+      <div class="tech-orb orb2"></div>
+
+      <div class="hero-content">
+        <img src="logo_img.jpeg" alt="VRS IT Solutions" />
+
+        <h1>
+          Smart Technology.
+          <br />
+          <span>Powerful Solutions.</span>
+        </h1>
+
+        <p>
+          VRS IT Solutions helps businesses grow with modern websites, mobile
+          applications, custom software solutions, cloud services and reliable
+          IT support.
+        </p>
+
+        <a href="#contact" class="btn"> Get Started → </a>
+      </div>
+    </section>
+
+    <!-- ========================================================
+       SERVICES
+  ========================================================= -->
+
+    <section id="services">
+      <div class="section-ring one"></div>
+      <div class="section-ring two"></div>
+      <div class="our_servi">
+        <h2 class="title">Our Services</h2>
+
+        <p class="subtitle">
+          We provide complete technology solutions designed to help businesses
+          succeed in the digital world.
+        </p>
+      </div>
+      <br />
+      <br />
+      <br />
+
+      <div class="services">
+        <div class="card reveal">
+          <div class="icon">💻</div>
+
+          <h3>Web Development</h3>
+
+          <p>
+            Modern, fast and responsive websites for businesses and
+            organizations.
+          </p>
+
+          <a href="web-development.html"> Learn More → </a>
+        </div>
+
+        <div class="card reveal">
+          <div class="icon">📱</div>
+
+          <h3>App Development</h3>
+
+          <p>
+            User-friendly mobile applications designed for modern businesses.
+          </p>
+
+          <a href="app-development.html"> Learn More → </a>
+        </div>
+
+        <div class="card reveal">
+          <div class="icon">⚙️</div>
+
+          <h3>Software Development</h3>
+
+          <p>
+            Custom software solutions designed according to your business needs.
+          </p>
+
+          <a href="software-development.html"> Learn More → </a>
+        </div>
+
+        <div class="card reveal">
+          <div class="icon">☁️</div>
+
+          <h3>Cloud Services</h3>
+
+          <p>Secure and scalable cloud solutions for modern businesses.</p>
+
+          <a href="cloud-services.html"> Learn More → </a>
+        </div>
+
+        <div class="card reveal">
+          <div class="icon">🛠️</div>
+
+          <h3>IT Support</h3>
+
+          <p>
+            Reliable technical support to keep your business systems running
+            smoothly.
+          </p>
+
+          <a href="it-support.html"> Learn More → </a>
+        </div>
+
+        <div class="card reveal">
+          <div class="icon">🔒</div>
+
+          <h3>IT Security</h3>
+
+          <p>
+            Technology-focused security solutions to help protect business
+            systems.
+          </p>
+
+          <a href="#contact"> Contact Us → </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+       STATS
+  ========================================================= -->
+
+    <section class="stats reveal">
+      <div class="stat">
+        <h2>50+</h2>
+        <p>Projects</p>
+      </div>
+
+      <div class="stat">
+        <h2>40+</h2>
+        <p>Happy Clients</p>
+      </div>
+
+      <div class="stat">
+        <h2>5+</h2>
+        <p>IT Services</p>
+      </div>
+
+      <div class="stat">
+        <h2>24/7</h2>
+        <p>Support</p>
+      </div>
+    </section>
+
+    <!-- ========================================================
+       ABOUT
+  ========================================================= -->
+
+    <section class="about reveal" id="about">
+      <h2 class="title">About VRS</h2>
+
+      <p id="ab_vrs">
+        VRS IT Solutions is a technology company focused on providing modern,
+        reliable and affordable IT solutions. Our goal is to help businesses
+        build a strong digital presence and use technology to work smarter and
+        grow faster.
+      </p>
+    </section>
+
+    <!-- ========================================================
+       PROJECTS
+  ========================================================= -->
+
+    <section id="projects">
+      <h2 class="title">Our Projects</h2>
+
+      <p class="subtitle">
+        Explore some of the digital solutions created by VRS IT Solutions.
+      </p>
+
+      <div class="projects">
+        <div class="project reveal">
+          <div class="project-image web-project">
+            <span> WEB DEVELOPMENT </span>
+
+            <a href="web-development.html"> View Project </a>
+          </div>
+
+          <div class="project-content">
+            <h3>Business Website</h3>
+
+            <p>
+              A modern responsive website designed for a professional business.
+            </p>
+          </div>
+        </div>
+
+        <div class="project reveal">
+          <div class="project-image app-project">
+            <span> APP DEVELOPMENT </span>
+
+            <a href="app-development.html"> View Project </a>
+          </div>
+
+          <div class="project-content">
+            <h3>Mobile Application</h3>
+
+            <p>
+              A clean and user-friendly mobile application for modern customers.
+            </p>
+          </div>
+        </div>
+
+        <div class="project reveal">
+          <div class="project-image software-project">
+            <span> SOFTWARE </span>
+
+            <a href="software-development.html"> View Project </a>
+          </div>
+
+          <div class="project-content">
+            <h3>Business Software</h3>
+
+            <p>Custom software designed to simplify business operations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+       CONTACT
+  ========================================================= -->
+
+    <section class="contact" id="contact">
+      <h2 class="title">Contact VRS</h2>
+
+      <p class="subtitle">
+        Have a project in mind? Tell us about your requirements and our team
+        will get back to you.
+      </p>
+
+      <div class="contact-container reveal">
+        <!-- CONTACT INFO -->
+
+        <div class="contact-info">
+          <h2>Let's Talk</h2>
+
+          <p>
+            We would love to hear about your project. Contact VRS IT Solutions
+            today.
+          </p>
+
+          <div class="info-item">
+            📧
+            <span> kirtiraj.sysroot@gmail.com </span>
+          </div>
+
+          <div class="info-item">
+            📞
+            <span> +91 9301621693 </span>
+          </div>
+
+          <div class="info-item">
+            📍
+            <span> India </span>
+          </div>
+        </div>
+
+        <!-- CONTACT FORM -->
+
+        <form class="contact-form" id="contactForm">
+          <input
+            type="text"
+            id="name"
+            placeholder="Your Name"
+            autocomplete="name"
+            required
+          />
+
+          <input
+            type="email"
+            id="email"
+            placeholder="Your Email"
+            autocomplete="email"
+            required
+          />
+
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Phone Number"
+            autocomplete="tel"
+            required
+          />
+
+          <select id="service" required>
+            <option value="">Select a Service</option>
+
+            <option value="Web Development">Web Development</option>
+
+            <option value="App Development">App Development</option>
+
+            <option value="Software Development">Software Development</option>
+
+            <option value="Cloud Services">Cloud Services</option>
+
+            <option value="IT Support">IT Support</option>
+
+            <option value="IT Security">IT Security</option>
+          </select>
+
+          <textarea
+            id="message"
+            placeholder="Tell us about your project..."
+            rows="6"
+            required
+          ></textarea>
+
+          <button type="submit" class="btn">Send Message →</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ========================================================
+       FOOTER
+  ========================================================= -->
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-box">
+          <div class="footer-logo">VRS</div>
+
+          <h3>VRS IT Solutions</h3>
+
+          <p>
+            Smart technology solutions for modern businesses. We help businesses
+            grow with reliable digital solutions.
+          </p>
+        </div>
+
+        <div class="footer-box">
+          <h3>Quick Links</h3>
+
+          <a href="#home"> Home </a>
+
+          <a href="#about"> About Us </a>
+
+          <a href="#services"> Services </a>
+
+          <a href="#projects"> Projects </a>
+
+          <a href="#contact"> Contact </a>
+        </div>
+
+        <div class="footer-box">
+          <h3>Services</h3>
+
+          <a href="web-development.html"> Web Development </a>
+
+          <a href="app-development.html"> App Development </a>
+
+          <a href="software-development.html"> Software Development </a>
+
+          <a href="cloud-services.html"> Cloud Services </a>
+
+          <a href="it-support.html"> IT Support </a>
+        </div>
+
+        <div class="footer-box">
+          <h3>Contact Us</h3>
+
+          <p>📧 kirtiraj.sysroot@gmail.com</p>
+
+          <p>📞 +91 9301621693</p>
+
+          <p>📍 India</p>
+
+          <div class="social">
+            <a href="#" aria-label="Facebook"> f </a>
+
+            <a href="#" aria-label="LinkedIn"> in </a>
+
+            <a href="#" aria-label="X"> 𝕏 </a>
+
+            <a href="#" aria-label="YouTube"> ▶ </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 VRS IT Solutions. All Rights Reserved.</p>
+
+        <a href="#home" class="top-btn" aria-label="Back to top"> ↑ </a>
+      </div>
+    </footer>
+
+    <!-- ========================================================
+       JAVASCRIPT
+  ========================================================= -->
+
+    <script>
+      /* ========================================================
+       ELEMENTS
+    ======================================================== */
+
+      const menuBtn = document.getElementById("menuBtn");
+
+      const mainNav = document.getElementById("mainNav");
+
+      const servicesDropdown = document.getElementById("servicesDropdown");
+
+      const servicesToggle = document.getElementById("servicesToggle");
+
+      const contactForm = document.getElementById("contactForm");
+
+      /* ========================================================
+       MOBILE MENU
+    ======================================================== */
+
+      menuBtn.addEventListener("click", function () {
+        const isOpen = mainNav.classList.toggle("active");
+
+        menuBtn.setAttribute("aria-expanded", isOpen);
+
+        document.body.classList.toggle("menu-open", isOpen);
+
+        menuBtn.textContent = isOpen ? "✕" : "☰";
+      });
+
+      /* ========================================================
+       SERVICES DROPDOWN
+       Desktop = Hover
+       Mobile = Click
+    ======================================================== */
+
+      servicesToggle.addEventListener("click", function (event) {
+        /*
+          On mobile:
+          Open/close dropdown manually.
+
+          On desktop:
+          Allow navigation to #services.
+        */
+
+        if (window.innerWidth <= 768) {
+          event.preventDefault();
+
+          const isOpen = servicesDropdown.classList.toggle("services-open");
+
+          servicesToggle.setAttribute("aria-expanded", isOpen);
+        }
+      });
+
+      /* ========================================================
+       CLOSE MOBILE MENU AFTER NORMAL LINK CLICK
+    ======================================================== */
+
+      document.querySelectorAll("#mainNav > a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          if (window.innerWidth <= 768) {
+            mainNav.classList.remove("active");
+
+            document.body.classList.remove("menu-open");
+
+            menuBtn.setAttribute("aria-expanded", "false");
+
+            menuBtn.textContent = "☰";
+
+            servicesDropdown.classList.remove("services-open");
+
+            servicesToggle.setAttribute("aria-expanded", "false");
+          }
+        });
+      });
+
+      /* ========================================================
+       CLOSE MENU WHEN SERVICE LINK IS CLICKED
+    ======================================================== */
+
+      servicesDropdown
+        .querySelectorAll(".dropdown-menu a")
+        .forEach(function (link) {
+          link.addEventListener("click", function () {
+            if (window.innerWidth <= 768) {
+              mainNav.classList.remove("active");
+
+              document.body.classList.remove("menu-open");
+
+              menuBtn.setAttribute("aria-expanded", "false");
+
+              menuBtn.textContent = "☰";
+
+              servicesDropdown.classList.remove("services-open");
+            }
+          });
+        });
+
+      /* ========================================================
+       CLOSE MENU ON OUTSIDE CLICK
+    ======================================================== */
+
+      document.addEventListener("click", function (event) {
+        if (
+          window.innerWidth <= 768 &&
+          mainNav.classList.contains("active") &&
+          !mainNav.contains(event.target) &&
+          !menuBtn.contains(event.target)
+        ) {
+          mainNav.classList.remove("active");
+
+          document.body.classList.remove("menu-open");
+
+          menuBtn.setAttribute("aria-expanded", "false");
+
+          menuBtn.textContent = "☰";
+        }
+      });
+
+      /* ========================================================
+       WHATSAPP CONTACT FORM
+    ======================================================== */
+
+      contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+
+        const email = document.getElementById("email").value.trim();
+
+        const phone = document.getElementById("phone").value.trim();
+
+        const service = document.getElementById("service").value;
+
+        const message = document.getElementById("message").value.trim();
+
+        if (!name || !email || !phone || !service || !message) {
+          alert("Please fill in all fields.");
+
+          return;
+        }
+
+        const whatsappNumber = "919301621693";
+
+        const text =
+          "Hello VRS IT Solutions,\n\n" +
+          "Name: " +
+          name +
+          "\n" +
+          "Email: " +
+          email +
+          "\n" +
+          "Phone: " +
+          phone +
+          "\n" +
+          "Service: " +
+          service +
+          "\n\n" +
+          "Project Details:\n" +
+          message;
+
+        /*
+          IMPORTANT:
+          Correct WhatsApp URL.
+        */
+
+        const whatsappURL =
+          "https://wa.me/" +
+          whatsappNumber +
+          "?text=" +
+          encodeURIComponent(text);
+
+        window.open(whatsappURL, "_blank");
+
+        /*
+          Optional form reset.
+        */
+
+        contactForm.reset();
+      });
+
+      /* ========================================================
+       SCROLL REVEAL
+    ======================================================== */
+
+      const revealElements = document.querySelectorAll(".reveal");
+
+      const observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12,
+        },
+      );
+
+      revealElements.forEach(function (element) {
+        observer.observe(element);
+      });
+
+      /* ========================================================
+       SMOOTH HEADER EFFECT ON SCROLL
+    ======================================================== */
+
+      const header = document.getElementById("header");
+
+      window.addEventListener(
+        "scroll",
+        function () {
+          if (window.scrollY > 50) {
+            header.style.background = "rgba(3, 16, 35, 0.94)";
+
+            header.style.boxShadow = "0 12px 35px rgba(0,0,0,.35)";
+          } else {
+            header.style.background = "rgba(4, 20, 43, 0.78)";
+
+            header.style.boxShadow = "0 8px 30px rgba(0,0,0,.25)";
+          }
+        },
+        {
+          passive: true,
+        },
+      );
+
+      /* ========================================================
+       CLOSE DROPDOWN WHEN RESIZING TO DESKTOP
+    ======================================================== */
+
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 768) {
+          mainNav.classList.remove("active");
+
+          servicesDropdown.classList.remove("services-open");
+
+          document.body.classList.remove("menu-open");
+
+          menuBtn.setAttribute("aria-expanded", "false");
+
+          menuBtn.textContent = "☰";
+        }
+      });
+    </script>
+  </body>
+</html>
+```
