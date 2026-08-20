@@ -425,6 +425,7 @@
         justify-content: center;
 
         overflow: hidden;
+        border-radius: 50%;
 
         background: #08294d;
 
@@ -705,7 +706,7 @@
       }
 
       .hero-content img {
-        width: 300px;
+        width: 250px;
         max-width: 90%;
 
         border-radius: 15px;
@@ -1091,8 +1092,6 @@
     ========================================================= */
 
       .our_servi {
-        width: 100%;
-
         background: linear-gradient(
           135deg,
           rgba(226, 241, 255, 0.55),
@@ -1538,7 +1537,7 @@
       }
 
       .project-image {
-        height: 230px;
+        height: 250px;
 
         position: relative;
 
@@ -1565,7 +1564,7 @@
         height: 200%;
 
         background: repeating-linear-gradient(
-          45deg,
+          35deg,
           transparent,
           transparent 20px,
           rgba(255, 255, 255, 0.07) 21px,
@@ -1632,8 +1631,7 @@
       }
 
       .project:hover .project-image a {
-        bottom: 25px;
-
+        bottom: 20px;
         opacity: 1;
       }
 
@@ -2248,7 +2246,7 @@
         }
 
         .hero-content img {
-          width: 240px;
+          width: 340px;
         }
 
         .hero-content p {
@@ -2294,14 +2292,14 @@
 
         .orb1 {
           animation:
-            mobileOrbRotate 22s linear infinite,
-            mobileOrbFloat 7s ease-in-out infinite;
+            mobileOrbRotate 12s linear infinite,
+            mobileOrbFloat 2s ease-in-out infinite;
         }
 
         .orb2 {
           animation:
-            mobileOrbRotate 26s linear infinite,
-            mobileOrbFloat 8s ease-in-out infinite reverse;
+            mobileOrbRotate 16s linear infinite,
+            mobileOrbFloat 2s ease-in-out infinite reverse;
         }
 
         @keyframes mobileOrbRotate {
@@ -2565,6 +2563,7 @@
       .about {
         text-align: center;
         padding: 110px 8%;
+        width: 100%;
       }
 
       .about .title {
@@ -2572,6 +2571,7 @@
         margin-left: auto;
         margin-right: auto;
         padding: 18px 35px;
+        width: 40%;
 
         color: #082344;
 
@@ -2590,7 +2590,7 @@
       }
 
       .about > p {
-        max-width: 900px;
+        max-width: 100%;
 
         margin: 25px auto 0;
 
@@ -2637,6 +2637,8 @@
 
       /* Project heading only */
       #projects .title {
+        width: 40%;
+
         display: table;
 
         margin-left: auto;
@@ -2660,7 +2662,7 @@
 
       /* Project subtitle */
       #projects .subtitle {
-        max-width: 700px;
+        max-width: 100%;
 
         padding: 18px 25px;
 
@@ -2803,6 +2805,7 @@
           font-size: 30px;
 
           border-radius: 14px;
+          width: 80%;
         }
 
         .about > p {
@@ -2842,6 +2845,158 @@
           ) !important;
         }
       }
+
+      /* =========================================================
+         PERFORMANCE OPTIMIZATION
+         Keeps the same visual style while reducing GPU/CPU load.
+      ========================================================= */
+
+      .site-background,
+      .site-background * {
+        will-change: transform;
+      }
+
+      .light {
+        filter: blur(55px);
+        animation-duration: 18s;
+      }
+
+      .grid-background {
+        animation-duration: 30s;
+      }
+
+      .background-ring {
+        will-change: transform;
+      }
+
+      .tech-orb {
+        will-change: transform;
+      }
+
+      .shine {
+        filter: blur(6px);
+        animation-duration: 11s;
+      }
+
+      .section-ring {
+        animation-duration: 35s;
+      }
+
+      .stats::before {
+        animation-duration: 26s;
+      }
+
+      .footer-logo {
+        animation-duration: 5s;
+      }
+
+      .reveal {
+        filter: none;
+        transform: translate3d(0, 35px, 0);
+        transition:
+          opacity 0.55s ease,
+          transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .reveal.show {
+        transform: translate3d(0, 0, 0);
+      }
+
+      /* Backdrop blur is expensive, especially on phones. */
+      @media (min-width: 769px) {
+        header,
+        .dropdown-menu,
+        .card,
+        .project,
+        .contact-info,
+        .contact-form {
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+        }
+
+        #services,
+        .about,
+        #projects,
+        .contact {
+          backdrop-filter: blur(1px);
+          -webkit-backdrop-filter: blur(1px);
+        }
+      }
+
+      @media (max-width: 768px) {
+        /* Keep mobile smooth by removing the most expensive effects. */
+        .site-background .grid-background,
+        .site-background .background-ring.two,
+        .site-background .background-ring.three,
+        .site-background .light.three,
+        .site-background .particles .particle:nth-child(n + 7) {
+          display: none;
+        }
+
+        .site-background .light {
+          filter: blur(35px);
+          opacity: 0.42;
+          animation: none;
+        }
+
+        .site-background .background-ring.one {
+          width: 420px;
+          height: 420px;
+          animation-duration: 45s;
+          opacity: 0.55;
+        }
+
+        .tech-orb {
+          animation-duration: 32s, 12s !important;
+        }
+
+        .shine {
+          animation: none;
+          opacity: 0.35;
+          filter: blur(4px);
+        }
+
+        .section-ring,
+        .stats::before,
+        footer::before {
+          animation: none;
+        }
+
+        section::before,
+        .about::after,
+        #projects::after,
+        .contact::after {
+          animation: none;
+          filter: blur(15px);
+          opacity: 0.5;
+        }
+
+        .card::after,
+        .project-image::before {
+          animation: none;
+        }
+
+        .reveal {
+          transform: translate3d(0, 18px, 0);
+          transition-duration: 0.4s;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+          transition-duration: 0.001ms !important;
+        }
+      }
+
+      header.scrolled {
+        background: rgba(3, 16, 35, 0.94);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+      }
     </style>
   </head>
 
@@ -2862,17 +3017,6 @@
       <div class="background-ring three"></div>
 
       <div class="particles">
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
         <span class="particle"></span>
         <span class="particle"></span>
         <span class="particle"></span>
@@ -3543,27 +3687,26 @@
       });
 
       /* ========================================================
-       HEADER SCROLL EFFECT
+       HEADER SCROLL EFFECT - throttled with requestAnimationFrame
     ========================================================= */
 
       const header = document.getElementById("header");
+      let headerTicking = false;
+
+      function updateHeader() {
+        header.classList.toggle("scrolled", window.scrollY > 50);
+        headerTicking = false;
+      }
 
       window.addEventListener(
         "scroll",
         function () {
-          if (window.scrollY > 50) {
-            header.style.background = "rgba(3, 16, 35, 0.94)";
-
-            header.style.boxShadow = "0 12px 35px rgba(0,0,0,.35)";
-          } else {
-            header.style.background = "rgba(4, 20, 43, 0.78)";
-
-            header.style.boxShadow = "0 8px 30px rgba(0,0,0,.25)";
+          if (!headerTicking) {
+            headerTicking = true;
+            requestAnimationFrame(updateHeader);
           }
         },
-        {
-          passive: true,
-        },
+        { passive: true },
       );
 
       /* ========================================================
