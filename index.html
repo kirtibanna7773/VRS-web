@@ -425,7 +425,6 @@
         justify-content: center;
 
         overflow: hidden;
-        border-radius: 50%;
 
         background: #08294d;
 
@@ -706,7 +705,7 @@
       }
 
       .hero-content img {
-        width: 250px;
+        width: 300px;
         max-width: 90%;
 
         border-radius: 15px;
@@ -1092,6 +1091,8 @@
     ========================================================= */
 
       .our_servi {
+        width: 100%;
+
         background: linear-gradient(
           135deg,
           rgba(226, 241, 255, 0.55),
@@ -1537,7 +1538,7 @@
       }
 
       .project-image {
-        height: 250px;
+        height: 230px;
 
         position: relative;
 
@@ -1564,7 +1565,7 @@
         height: 200%;
 
         background: repeating-linear-gradient(
-          35deg,
+          45deg,
           transparent,
           transparent 20px,
           rgba(255, 255, 255, 0.07) 21px,
@@ -1631,7 +1632,8 @@
       }
 
       .project:hover .project-image a {
-        bottom: 20px;
+        bottom: 25px;
+
         opacity: 1;
       }
 
@@ -1998,9 +2000,9 @@
         filter: blur(5px);
 
         transition:
-          opacity 0.2s ease,
-          transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
-          filter 0.2s ease;
+          opacity 0.9s ease,
+          transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1),
+          filter 0.9s ease;
       }
 
       .reveal.show {
@@ -2246,7 +2248,7 @@
         }
 
         .hero-content img {
-          width: 340px;
+          width: 240px;
         }
 
         .hero-content p {
@@ -2292,14 +2294,14 @@
 
         .orb1 {
           animation:
-            mobileOrbRotate 12s linear infinite,
-            mobileOrbFloat 2s ease-in-out infinite;
+            mobileOrbRotate 22s linear infinite,
+            mobileOrbFloat 7s ease-in-out infinite;
         }
 
         .orb2 {
           animation:
-            mobileOrbRotate 16s linear infinite,
-            mobileOrbFloat 2s ease-in-out infinite reverse;
+            mobileOrbRotate 26s linear infinite,
+            mobileOrbFloat 8s ease-in-out infinite reverse;
         }
 
         @keyframes mobileOrbRotate {
@@ -2563,7 +2565,6 @@
       .about {
         text-align: center;
         padding: 110px 8%;
-        width: 100%;
       }
 
       .about .title {
@@ -2571,7 +2572,6 @@
         margin-left: auto;
         margin-right: auto;
         padding: 18px 35px;
-        width: 40%;
 
         color: #082344;
 
@@ -2590,7 +2590,7 @@
       }
 
       .about > p {
-        max-width: 100%;
+        max-width: 900px;
 
         margin: 25px auto 0;
 
@@ -2637,8 +2637,6 @@
 
       /* Project heading only */
       #projects .title {
-        width: 40%;
-
         display: table;
 
         margin-left: auto;
@@ -2662,7 +2660,7 @@
 
       /* Project subtitle */
       #projects .subtitle {
-        max-width: 100%;
+        max-width: 700px;
 
         padding: 18px 25px;
 
@@ -2805,7 +2803,6 @@
           font-size: 30px;
 
           border-radius: 14px;
-          width: 80%;
         }
 
         .about > p {
@@ -2845,159 +2842,82 @@
           ) !important;
         }
       }
+    
+/* =========================================================
+   MOBILE PERFORMANCE MODE - NO SCROLL ANIMATIONS
+   Keeps the design but removes expensive mobile effects.
+========================================================= */
+@media (max-width: 768px) {
+  html { scroll-behavior: auto !important; }
 
-      /* =========================================================
-         PERFORMANCE OPTIMIZATION
-         Keeps the same visual style while reducing GPU/CPU load.
-      ========================================================= */
+  /* Stop every decorative animation on mobile */
+  .site-background *,
+  .light,
+  .grid-background,
+  .particle,
+  .background-ring,
+  .tech-orb,
+  section::before,
+  .hero-content img,
+  .hero-content h1,
+  .hero-content p,
+  .hero .btn,
+  header {
+    animation: none !important;
+  }
 
-      .site-background,
-      .site-background * {
-        will-change: transform;
-      }
+  /* Remove expensive visual effects */
+  .light,
+  .grid-background,
+  .particles,
+  .background-ring,
+  .tech-orb {
+    display: none !important;
+  }
 
-      .light {
-        filter: blur(55px);
-        animation-duration: 18s;
-      }
+  header,
+  .dropdown-menu,
+  #services,
+  .about,
+  #projects,
+  #contact {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
 
-      .grid-background {
-        animation-duration: 30s;
-      }
+  /* No reveal transition while scrolling */
+  .reveal,
+  .reveal.show {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
 
-      .background-ring {
-        will-change: transform;
-      }
+  /* Disable hover transitions on touch devices */
+  * {
+    scroll-behavior: auto !important;
+  }
 
-      .tech-orb {
-        will-change: transform;
-      }
+  .btn,
+  .logo-mark,
+  nav > a,
+  .dropdown > a,
+  .dropdown-menu a,
+  .menu-btn,
+  .card,
+  .service-card,
+  .project-card {
+    transition: none !important;
+  }
+}
 
-      .shine {
-        filter: blur(6px);
-        animation-duration: 11s;
-      }
-
-      .section-ring {
-        animation-duration: 35s;
-      }
-
-      .stats::before {
-        animation-duration: 26s;
-      }
-
-      .footer-logo {
-        animation-duration: 5s;
-      }
-
-      .reveal {
-        filter: none;
-        transform: translate3d(0, 35px, 0);
-        transition:
-          opacity 0.2s ease,
-          transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
-      }
-
-      .reveal.show {
-        transform: translate3d(0, 0, 0);
-      }
-
-      /* Backdrop blur is expensive, especially on phones. */
-      @media (min-width: 769px) {
-        header,
-        .dropdown-menu,
-        .card,
-        .project,
-        .contact-info,
-        .contact-form {
-          backdrop-filter: blur(8px);
-          -webkit-backdrop-filter: blur(8px);
-        }
-
-        #services,
-        .about,
-        #projects,
-        .contact {
-          backdrop-filter: blur(1px);
-          -webkit-backdrop-filter: blur(1px);
-        }
-      }
-
-      @media (max-width: 768px) {
-        /* Keep mobile smooth by removing the most expensive effects. */
-        .site-background .grid-background,
-        .site-background .background-ring.two,
-        .site-background .background-ring.three,
-        .site-background .light.three,
-        .site-background .particles .particle:nth-child(n + 7) {
-          display: none;
-        }
-
-        .site-background .light {
-          filter: blur(35px);
-          opacity: 0.42;
-          animation: none;
-        }
-
-        .site-background .background-ring.one {
-          width: 420px;
-          height: 420px;
-          animation-duration: 45s;
-          opacity: 0.55;
-        }
-
-        .tech-orb {
-          animation-duration: 32s, 12s !important;
-        }
-
-        .shine {
-          animation: none;
-          opacity: 0.35;
-          filter: blur(4px);
-        }
-
-        .section-ring,
-        .stats::before,
-        footer::before {
-          animation: none;
-        }
-
-        section::before,
-        .about::after,
-        #projects::after,
-        .contact::after {
-          animation: none;
-          filter: blur(15px);
-          opacity: 0.5;
-        }
-
-        .card::after,
-        .project-image::before {
-          animation: none;
-        }
-
-        .reveal {
-          transform: translate3d(0, 18px, 0);
-          transition-duration: 0.4s;
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        *,
-        *::before,
-        *::after {
-          animation-duration: 0.001ms !important;
-          animation-iteration-count: 1 !important;
-          scroll-behavior: auto !important;
-          transition-duration: 0.001ms !important;
-        }
-      }
-
-      header.scrolled {
-        background: rgba(3, 16, 35, 0.94);
-        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
-      }
-    </style>
+/* Very low-power phones: simplify even further */
+@media (max-width: 480px) {
+  section::before { display: none !important; }
+  * { box-shadow: none !important; text-shadow: none !important; }
+}
+</style>
   </head>
 
   <body>
@@ -3017,6 +2937,17 @@
       <div class="background-ring three"></div>
 
       <div class="particles">
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
         <span class="particle"></span>
         <span class="particle"></span>
         <span class="particle"></span>
@@ -3687,26 +3618,27 @@
       });
 
       /* ========================================================
-       HEADER SCROLL EFFECT - throttled with requestAnimationFrame
+       HEADER SCROLL EFFECT
     ========================================================= */
 
       const header = document.getElementById("header");
-      let headerTicking = false;
-
-      function updateHeader() {
-        header.classList.toggle("scrolled", window.scrollY > 50);
-        headerTicking = false;
-      }
 
       window.addEventListener(
         "scroll",
         function () {
-          if (!headerTicking) {
-            headerTicking = true;
-            requestAnimationFrame(updateHeader);
+          if (window.scrollY > 50) {
+            header.style.background = "rgba(3, 16, 35, 0.94)";
+
+            header.style.boxShadow = "0 12px 35px rgba(0,0,0,.35)";
+          } else {
+            header.style.background = "rgba(4, 20, 43, 0.78)";
+
+            header.style.boxShadow = "0 8px 30px rgba(0,0,0,.25)";
           }
         },
-        { passive: true },
+        {
+          passive: true,
+        },
       );
 
       /* ========================================================
