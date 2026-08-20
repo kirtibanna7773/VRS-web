@@ -1,3889 +1,1187 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <meta
-      name="description"
-      content="VRS IT Solutions provides modern web development, app development, software development, cloud services and IT support."
-    />
-
-    <title>VRS IT Solutions | Smart Technology</title>
-
-    <style>
-      /* =========================================================
-       VRS IT SOLUTIONS
-       PREMIUM BLUE 3D WEBSITE
-    ========================================================= */
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        scroll-behavior: smooth;
-      }
-
-      html {
-        scroll-padding-top: 80px;
-      }
-
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-        color: #172033;
-        background: #061326;
-        overflow-x: hidden;
-      }
-
-      body.menu-open {
-        overflow: hidden;
-      }
-
-      a {
-        text-decoration: none;
-      }
-
-      button,
-      input,
-      select,
-      textarea {
-        font-family: inherit;
-      }
-
-      button {
-        cursor: pointer;
-      }
-
-      /* =========================================================
-       GLOBAL ANIMATED BACKGROUND
-    ========================================================= */
-
-      .site-background {
-        position: fixed;
-        inset: 0;
-        z-index: -20;
-        overflow: hidden;
-
-        background:
-          radial-gradient(
-            circle at 15% 20%,
-            rgba(0, 153, 255, 0.25),
-            transparent 30%
-          ),
-          radial-gradient(
-            circle at 85% 25%,
-            rgba(0, 102, 255, 0.2),
-            transparent 30%
-          ),
-          radial-gradient(
-            circle at 50% 90%,
-            rgba(0, 212, 255, 0.16),
-            transparent 35%
-          ),
-          #061326;
-      }
-
-      /* ================= GLOWING LIGHTS ================= */
-
-      .light {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(80px);
-        opacity: 0.65;
-        pointer-events: none;
-
-        animation: lightMove 12s ease-in-out infinite alternate;
-      }
-
-      .light.one {
-        width: 330px;
-        height: 330px;
-        background: #008cff;
-        top: 5%;
-        left: -100px;
-      }
-
-      .light.two {
-        width: 380px;
-        height: 380px;
-        background: #004cff;
-        top: 35%;
-        right: -130px;
-        animation-delay: 2s;
-      }
-
-      .light.three {
-        width: 280px;
-        height: 280px;
-        background: #00d9ff;
-        bottom: 5%;
-        left: 35%;
-        animation-delay: 4s;
-      }
-
-      @keyframes lightMove {
-        0% {
-          transform: translate(0, 0) scale(1);
-        }
-
-        50% {
-          transform: translate(80px, -60px) scale(1.15);
-        }
-
-        100% {
-          transform: translate(-50px, 70px) scale(0.9);
-        }
-      }
-
-      /* ================= 3D GRID ================= */
-
-      .grid-background {
-        position: absolute;
-        inset: -50%;
-        width: 200%;
-        height: 200%;
-
-        background-image:
-          linear-gradient(rgba(0, 174, 255, 0.1) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(0, 174, 255, 0.1) 1px, transparent 1px);
-
-        background-size: 55px 55px;
-
-        transform: perspective(600px) rotateX(60deg);
-        transform-origin: center;
-
-        animation: gridMove 18s linear infinite;
-
-        mask-image: linear-gradient(
-          to bottom,
-          transparent,
-          black 20%,
-          black 80%,
-          transparent
-        );
-
-        -webkit-mask-image: linear-gradient(
-          to bottom,
-          transparent,
-          black 20%,
-          black 80%,
-          transparent
-        );
-
-        pointer-events: none;
-      }
-
-      @keyframes gridMove {
-        from {
-          transform: perspective(600px) rotateX(60deg) translateY(0);
-        }
-
-        to {
-          transform: perspective(600px) rotateX(60deg) translateY(55px);
-        }
-      }
-
-      /* ================= PARTICLES ================= */
-
-      .particles {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-      }
-
-      .particle {
-        position: absolute;
-
-        width: 4px;
-        height: 4px;
-
-        background: #54d9ff;
-        border-radius: 50%;
-
-        box-shadow:
-          0 0 10px #00bfff,
-          0 0 20px #008cff;
-
-        animation: particleFloat linear infinite;
-      }
-
-      .particle:nth-child(1) {
-        left: 5%;
-        top: 20%;
-        animation-duration: 8s;
-      }
-
-      .particle:nth-child(2) {
-        left: 15%;
-        top: 70%;
-        animation-duration: 11s;
-      }
-
-      .particle:nth-child(3) {
-        left: 25%;
-        top: 35%;
-        animation-duration: 9s;
-      }
-
-      .particle:nth-child(4) {
-        left: 38%;
-        top: 80%;
-        animation-duration: 13s;
-      }
-
-      .particle:nth-child(5) {
-        left: 50%;
-        top: 15%;
-        animation-duration: 10s;
-      }
-
-      .particle:nth-child(6) {
-        left: 62%;
-        top: 60%;
-        animation-duration: 12s;
-      }
-
-      .particle:nth-child(7) {
-        left: 75%;
-        top: 25%;
-        animation-duration: 9s;
-      }
-
-      .particle:nth-child(8) {
-        left: 88%;
-        top: 75%;
-        animation-duration: 14s;
-      }
-
-      .particle:nth-child(9) {
-        left: 92%;
-        top: 40%;
-        animation-duration: 10s;
-      }
-
-      .particle:nth-child(10) {
-        left: 45%;
-        top: 50%;
-        animation-duration: 15s;
-      }
-
-      .particle:nth-child(11) {
-        left: 70%;
-        top: 85%;
-        animation-duration: 12s;
-      }
-
-      .particle:nth-child(12) {
-        left: 30%;
-        top: 10%;
-        animation-duration: 9s;
-      }
-
-      @keyframes particleFloat {
-        0% {
-          transform: translateY(120px);
-          opacity: 0;
-        }
-
-        20% {
-          opacity: 1;
-        }
-
-        80% {
-          opacity: 1;
-        }
-
-        100% {
-          transform: translateY(-200px);
-          opacity: 0;
-        }
-      }
-
-      /* ================= BACKGROUND RINGS ================= */
-
-      .background-ring {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-
-        border-radius: 50%;
-
-        transform: translate(-50%, -50%);
-
-        pointer-events: none;
-      }
-
-      .background-ring.one {
-        width: 520px;
-        height: 520px;
-
-        border: 1px solid rgba(0, 234, 255, 0.2);
-
-        box-shadow: 0 0 40px rgba(0, 234, 255, 0.1);
-
-        animation: rotateOne 22s linear infinite;
-      }
-
-      .background-ring.two {
-        width: 760px;
-        height: 760px;
-
-        border: 1px dashed rgba(0, 234, 255, 0.14);
-
-        animation: rotateTwo 30s linear infinite;
-      }
-
-      .background-ring.three {
-        width: 980px;
-        height: 980px;
-
-        border: 1px solid rgba(123, 0, 255, 0.1);
-
-        animation: rotateOne 40s linear infinite;
-      }
-
-      @keyframes rotateOne {
-        from {
-          transform: translate(-50%, -50%) rotate(0deg);
-        }
-
-        to {
-          transform: translate(-50%, -50%) rotate(360deg);
-        }
-      }
-
-      @keyframes rotateTwo {
-        from {
-          transform: translate(-50%, -50%) rotate(360deg);
-        }
-
-        to {
-          transform: translate(-50%, -50%) rotate(0deg);
-        }
-      }
-
-      /* =========================================================
-       HEADER
-    ========================================================= */
-
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 5000;
-
-        padding: 12px 7%;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        background: rgba(4, 20, 43, 0.78);
-
-        border-bottom: 1px solid rgba(77, 184, 255, 0.25);
-
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-
-        animation: headerDown 0.8s ease;
-      }
-
-      @keyframes headerDown {
-        from {
-          opacity: 0;
-          transform: translateY(-30px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* ================= LOGO ================= */
-
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-
-        color: white;
-
-        position: relative;
-        z-index: 20;
-      }
-
-      .logo-mark {
-        width: 48px;
-        height: 48px;
-
-        border-radius: 12px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        overflow: hidden;
-
-        background: #08294d;
-
-        box-shadow: 0 0 15px rgba(0, 174, 255, 0.5);
-
-        transition: 0.4s ease;
-      }
-
-      .logo-mark img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .logo:hover .logo-mark {
-        transform: rotate(8deg) scale(1.08);
-
-        box-shadow:
-          0 0 20px #00bfff,
-          0 0 40px rgba(0, 174, 255, 0.5);
-      }
-
-      .logo-text {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .logo-text strong {
-        font-size: 25px;
-        letter-spacing: 5px;
-        font-family: Georgia, serif;
-      }
-
-      .logo-text small {
-        margin-top: 4px;
-        color: #4db8ff;
-        font-size: 9px;
-        letter-spacing: 1.5px;
-      }
-
-      /* =========================================================
-       NAVIGATION
-    ========================================================= */
-
-      nav {
-        display: flex;
-        align-items: center;
-      }
-
-      nav > a,
-      .dropdown > a {
-        position: relative;
-
-        color: white;
-
-        margin-left: 25px;
-
-        transition: 0.3s;
-
-        font-weight: 500;
-      }
-
-      nav > a::after,
-      .dropdown > a::after {
-        content: "";
-
-        position: absolute;
-
-        left: 0;
-        bottom: -7px;
-
-        width: 0;
-        height: 2px;
-
-        background: #4dd9ff;
-
-        box-shadow: 0 0 10px #00bfff;
-
-        transition: 0.3s;
-      }
-
-      nav > a:hover,
-      .dropdown > a:hover {
-        color: #4dd9ff;
-
-        text-shadow: 0 0 12px #00bfff;
-      }
-
-      nav > a:hover::after,
-      .dropdown > a:hover::after {
-        width: 100%;
-      }
-
-      /* ================= MENU BUTTON ================= */
-
-      .menu-btn {
-        display: none;
-
-        border: none;
-        background: transparent;
-
-        color: white;
-
-        font-size: 30px;
-
-        width: 45px;
-        height: 45px;
-
-        border-radius: 10px;
-
-        transition: 0.3s;
-
-        position: relative;
-        z-index: 20;
-      }
-
-      .menu-btn:hover {
-        background: rgba(0, 174, 255, 0.15);
-        color: #4dd9ff;
-      }
-
-      /* =========================================================
-       SERVICES DROPDOWN
-    ========================================================= */
-
-      .dropdown {
-        position: relative;
-      }
-
-      .dropdown-menu {
-        position: absolute;
-
-        top: calc(100% + 15px);
-        left: 10px;
-
-        width: 250px;
-
-        padding: 8px;
-
-        background: linear-gradient(
-          145deg,
-          rgba(4, 20, 43, 0.98),
-          rgba(4, 40, 75, 0.98)
-        );
-
-        border: 1px solid rgba(77, 184, 255, 0.35);
-
-        border-radius: 14px;
-
-        box-shadow:
-          0 20px 50px rgba(0, 0, 0, 0.45),
-          0 0 30px rgba(0, 153, 255, 0.15);
-
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-
-        opacity: 0;
-        visibility: hidden;
-
-        transform: translateY(12px) scale(0.96);
-
-        transition:
-          opacity 0.3s ease,
-          transform 0.3s ease,
-          visibility 0.3s ease;
-
-        z-index: 6000;
-      }
-
-      .dropdown:hover .dropdown-menu,
-      .dropdown.services-open .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-
-        transform: translateY(0) scale(1);
-      }
-
-      .dropdown-menu a {
-        display: block;
-
-        margin: 0;
-
-        padding: 13px 15px;
-
-        border-radius: 9px;
-
-        color: white;
-
-        transition: 0.3s;
-      }
-
-      .dropdown-menu a:hover {
-        color: #4dd9ff;
-
-        background: linear-gradient(
-          90deg,
-          rgba(0, 140, 255, 0.25),
-          rgba(0, 217, 255, 0.08)
-        );
-
-        transform: translateX(5px);
-      }
-
-      /* =========================================================
-       COMMON SECTION
-    ========================================================= */
-
-      section {
-        position: relative;
-
-        padding: 110px 8%;
-
-        overflow: hidden;
-      }
-
-      section::before {
-        content: "";
-
-        position: absolute;
-
-        width: 300px;
-        height: 300px;
-
-        border-radius: 50%;
-
-        background: radial-gradient(
-          circle,
-          rgba(0, 174, 255, 0.1),
-          transparent 70%
-        );
-
-        filter: blur(30px);
-
-        pointer-events: none;
-
-        animation: sectionGlow 8s ease-in-out infinite alternate;
-      }
-
-      @keyframes sectionGlow {
-        from {
-          transform: translate(-20px, -10px);
-        }
-
-        to {
-          transform: translate(50px, 30px);
-        }
-      }
-
-      /* =========================================================
-       HERO
-    ========================================================= */
-
-      .hero {
-        min-height: 750px;
-
-        display: flex;
-        align-items: center;
-
-        overflow: hidden;
-
-        color: white;
-
-        background: linear-gradient(
-          135deg,
-          rgba(4, 20, 43, 0.88),
-          rgba(0, 74, 140, 0.52)
-        );
-
-        border-bottom: 1px solid rgba(77, 184, 255, 0.2);
-      }
-
-      .hero-content {
-        max-width: 720px;
-
-        position: relative;
-
-        z-index: 10;
-      }
-
-      .hero-content img {
-        width: 300px;
-        max-width: 90%;
-
-        border-radius: 15px;
-
-        margin-bottom: 25px;
-
-        filter: drop-shadow(0 0 15px rgba(0, 200, 255, 0.35));
-
-        animation: logoFloat 4s ease-in-out infinite;
-      }
-
-      @keyframes logoFloat {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-
-        50% {
-          transform: translateY(-10px);
-        }
-      }
-
-      .hero-content h1 {
-        font-size: clamp(42px, 6vw, 70px);
-
-        line-height: 1.05;
-
-        margin-bottom: 25px;
-
-        animation: heroTitle 1.2s ease both;
-      }
-
-      .hero-content h1 span {
-        color: #4dd9ff;
-
-        text-shadow:
-          0 0 10px rgba(0, 217, 255, 0.6),
-          0 0 30px rgba(0, 153, 255, 0.4);
-      }
-
-      .hero-content p {
-        font-size: 19px;
-
-        line-height: 1.8;
-
-        max-width: 650px;
-
-        color: #d7edff;
-
-        animation: heroText 1.5s ease both;
-      }
-
-      /* ================= BUTTON ================= */
-
-      .btn {
-        display: inline-flex;
-
-        align-items: center;
-        justify-content: center;
-
-        position: relative;
-
-        overflow: hidden;
-
-        margin-top: 30px;
-
-        padding: 15px 30px;
-
-        min-height: 50px;
-
-        border-radius: 9px;
-
-        background: linear-gradient(135deg, #4dd9ff, #008cff);
-
-        color: #031225;
-
-        font-weight: bold;
-
-        box-shadow: 0 0 15px rgba(0, 174, 255, 0.45);
-
-        transition:
-          transform 0.35s,
-          box-shadow 0.35s;
-
-        animation: heroButton 1.8s ease both;
-      }
-
-      .btn::before {
-        content: "";
-
-        position: absolute;
-
-        top: 0;
-        left: -130%;
-
-        width: 80%;
-        height: 100%;
-
-        background: linear-gradient(
-          110deg,
-          transparent,
-          rgba(255, 255, 255, 0.6),
-          transparent
-        );
-
-        transform: skewX(-20deg);
-
-        transition: 0.65s;
-      }
-
-      .btn:hover::before {
-        left: 140%;
-      }
-
-      .btn:hover {
-        transform: translateY(-5px) scale(1.04);
-
-        box-shadow:
-          0 0 20px #00c8ff,
-          0 0 45px rgba(0, 140, 255, 0.5);
-      }
-
-      /* =========================================================
-       PREMIUM 3D ORBS
-    ========================================================= */
-
-      .tech-orb {
-        position: absolute;
-
-        border-radius: 50%;
-
-        border: 1px solid rgba(90, 220, 255, 0.28);
-
-        box-shadow:
-          inset 0 0 25px rgba(0, 174, 255, 0.12),
-          0 0 25px rgba(0, 174, 255, 0.12);
-
-        right: 10%;
-        top: 24%;
-
-        opacity: 0.42;
-
-        pointer-events: none;
-
-        animation:
-          orbRotate 18s linear infinite,
-          orbFloat 8s ease-in-out infinite;
-      }
-
-      .tech-orb::before,
-      .tech-orb::after {
-        content: "";
-
-        position: absolute;
-
-        inset: 16%;
-
-        border: 1px solid rgba(77, 217, 255, 0.22);
-
-        border-radius: 50%;
-
-        box-shadow: 0 0 15px rgba(0, 174, 255, 0.08);
-      }
-
-      .tech-orb::before {
-        transform: rotateX(65deg) rotateZ(8deg);
-      }
-
-      .tech-orb::after {
-        transform: rotateY(65deg) rotateZ(-8deg);
-      }
-
-      .orb1 {
-        width: 390px;
-        height: 390px;
-      }
-
-      .orb2 {
-        width: 270px;
-        height: 270px;
-
-        right: 14%;
-        top: 31%;
-
-        opacity: 0.32;
-
-        animation-duration: 22s, 9s;
-      }
-
-      @keyframes orbRotate {
-        from {
-          transform: rotate(0deg);
-        }
-
-        to {
-          transform: rotate(360deg);
-        }
-      }
-
-      @keyframes orbFloat {
-        0%,
-        100% {
-          margin-top: 0;
-        }
-
-        50% {
-          margin-top: -18px;
-        }
-      }
-
-      @keyframes heroTitle {
-        from {
-          opacity: 0;
-          transform: translateY(60px);
-          filter: blur(10px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0);
-          filter: blur(0);
-        }
-      }
-
-      @keyframes heroText {
-        from {
-          opacity: 0;
-          transform: translateY(40px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes heroButton {
-        from {
-          opacity: 0;
-          transform: translateY(30px) scale(0.9);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0) scale(1);
-        }
-      }
-
-      /* =========================================================
-       PREMIUM GLASS SECTIONS
-       Global animation clearly visible behind them
-    ========================================================= */
-
-      #services {
-        background: linear-gradient(
-          135deg,
-          rgba(230, 245, 255, 0.7),
-          rgba(211, 236, 255, 0.58)
-        );
-
-        backdrop-filter: blur(2px);
-        -webkit-backdrop-filter: blur(2px);
-
-        border-top: 1px solid rgba(77, 184, 255, 0.18);
-
-        border-bottom: 1px solid rgba(77, 184, 255, 0.16);
-      }
-
-      .about {
-        background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.66),
-          rgba(218, 239, 255, 0.58)
-        );
-
-        backdrop-filter: blur(2px);
-        -webkit-backdrop-filter: blur(2px);
-
-        border-top: 1px solid rgba(77, 184, 255, 0.2);
-
-        border-bottom: 1px solid rgba(77, 184, 255, 0.18);
-
-        box-shadow:
-          inset 0 1px 0 rgba(255, 255, 255, 0.7),
-          inset 0 -1px 0 rgba(0, 140, 255, 0.05);
-      }
-
-      #projects {
-        background: linear-gradient(
-          135deg,
-          rgba(241, 249, 255, 0.66),
-          rgba(214, 238, 255, 0.56)
-        );
-
-        backdrop-filter: blur(2px);
-        -webkit-backdrop-filter: blur(2px);
-
-        border-top: 1px solid rgba(77, 184, 255, 0.18);
-
-        border-bottom: 1px solid rgba(77, 184, 255, 0.18);
-      }
-
-      .contact {
-        background: linear-gradient(
-          135deg,
-          rgba(226, 241, 255, 0.62),
-          rgba(244, 249, 255, 0.65)
-        );
-
-        backdrop-filter: blur(2px);
-        -webkit-backdrop-filter: blur(2px);
-
-        border-top: 1px solid rgba(77, 184, 255, 0.2);
-
-        border-bottom: 1px solid rgba(77, 184, 255, 0.18);
-      }
-
-      /* =========================================================
-       SECTION BACKGROUND GLOW
-    ========================================================= */
-
-      .about::after,
-      #projects::after,
-      .contact::after {
-        content: "";
-
-        position: absolute;
-
-        width: 420px;
-        height: 420px;
-
-        border-radius: 50%;
-
-        background: radial-gradient(
-          circle,
-          rgba(0, 174, 255, 0.13),
-          rgba(0, 174, 255, 0.04) 35%,
-          transparent 70%
-        );
-
-        filter: blur(20px);
-
-        pointer-events: none;
-
-        z-index: 0;
-
-        animation: premiumSectionGlow 10s ease-in-out infinite alternate;
-      }
-
-      .about::after {
-        left: -180px;
-        top: 5%;
-      }
-
-      #projects::after {
-        right: -180px;
-        top: 20%;
-        animation-delay: 2s;
-      }
-
-      .contact::after {
-        left: -180px;
-        bottom: 0;
-        animation-delay: 4s;
-      }
-
-      @keyframes premiumSectionGlow {
-        from {
-          transform: translate3d(0, 0, 0) scale(0.95);
-
-          opacity: 0.45;
-        }
-
-        to {
-          transform: translate3d(70px, -25px, 0) scale(1.08);
-
-          opacity: 0.85;
-        }
-      }
-
-      /* =========================================================
-       TITLES
-    ========================================================= */
-
-      .our_servi {
-        width: 100%;
-
-        background: linear-gradient(
-          135deg,
-          rgba(226, 241, 255, 0.55),
-          rgba(244, 249, 255, 0.48)
-        );
-
-        display: grid;
-
-        padding: 10px;
-
-        border-radius: 20px;
-
-        position: relative;
-        z-index: 3;
-
-        border: 1px solid rgba(0, 140, 255, 0.1);
-
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-      }
-
-      .title {
-        text-align: center;
-
-        font-size: 40px;
-
-        color: #082344;
-
-        margin-bottom: 15px;
-
-        position: relative;
-
-        z-index: 2;
-      }
-
-      .title::after {
-        content: "";
-
-        display: block;
-
-        width: 70px;
-        height: 4px;
-
-        margin: 15px auto 0;
-
-        border-radius: 10px;
-
-        background: linear-gradient(90deg, #008cff, #4dd9ff);
-
-        box-shadow: 0 0 12px rgba(0, 174, 255, 0.6);
-
-        animation: titleLine 5s ease-in-out infinite;
-      }
-
-      @keyframes titleLine {
-        0%,
-        100% {
-          width: 70px;
-        }
-
-        50% {
-          width: 120px;
-        }
-      }
-
-      .subtitle {
-        max-width: 700px;
-
-        margin: 0 auto 55px;
-
-        text-align: center;
-
-        color: #52647a;
-
-        line-height: 1.8;
-
-        position: relative;
-
-        z-index: 3;
-      }
-
-      /* =========================================================
-       SERVICES
-    ========================================================= */
-
-      .services {
-        display: grid;
-
-        grid-template-columns: repeat(3, 1fr);
-
-        gap: 25px;
-
-        position: relative;
-
-        z-index: 5;
-      }
-
-      .card {
-        position: relative;
-
-        padding: 35px;
-
-        border-radius: 18px;
-
-        background: linear-gradient(
-          145deg,
-          rgba(255, 255, 255, 0.86),
-          rgba(236, 247, 255, 0.78)
-        );
-
-        border: 1px solid rgba(0, 140, 255, 0.15);
-
-        box-shadow: 0 10px 35px rgba(10, 70, 120, 0.1);
-
-        overflow: hidden;
-
-        transition:
-          transform 0.5s,
-          box-shadow 0.5s,
-          border-color 0.5s;
-
-        backdrop-filter: blur(7px);
-        -webkit-backdrop-filter: blur(7px);
-      }
-
-      .card::before {
-        content: "";
-
-        position: absolute;
-
-        width: 160px;
-        height: 160px;
-
-        right: -80px;
-        top: -80px;
-
-        border-radius: 50%;
-
-        background: #00aaff;
-
-        opacity: 0.08;
-
-        transition: 0.5s;
-      }
-
-      .card::after {
-        content: "";
-
-        position: absolute;
-
-        left: -100%;
-
-        top: 0;
-
-        width: 80%;
-        height: 100%;
-
-        background: linear-gradient(
-          100deg,
-          transparent,
-          rgba(0, 174, 255, 0.07),
-          transparent
-        );
-
-        transform: skewX(-20deg);
-
-        transition: 0.8s;
-      }
-
-      .card:hover {
-        transform: translateY(-12px) perspective(800px) rotateX(2deg);
-
-        border-color: rgba(0, 153, 255, 0.4);
-
-        box-shadow:
-          0 20px 45px rgba(0, 105, 180, 0.18),
-          0 0 25px rgba(0, 174, 255, 0.12);
-      }
-
-      .card:hover::before {
-        transform: scale(2);
-      }
-
-      .card:hover::after {
-        left: 140%;
-      }
-
-      .icon {
-        font-size: 42px;
-
-        margin-bottom: 20px;
-
-        display: inline-block;
-
-        filter: drop-shadow(0 0 8px rgba(0, 153, 255, 0.35));
-
-        transition: 0.4s;
-      }
-
-      .card:hover .icon {
-        transform: translateY(-8px) rotate(8deg) scale(1.15);
-      }
-
-      .card h3 {
-        color: #0875bd;
-
-        margin-bottom: 14px;
-
-        position: relative;
-        z-index: 2;
-      }
-
-      .card p {
-        color: #56677b;
-
-        line-height: 1.7;
-
-        position: relative;
-        z-index: 2;
-      }
-
-      .card a {
-        display: inline-block;
-
-        margin-top: 20px;
-
-        color: #0875bd;
-
-        font-weight: bold;
-
-        transition: 0.3s;
-
-        position: relative;
-        z-index: 3;
-      }
-
-      .card a:hover {
-        color: #00aaff;
-
-        transform: translateX(5px);
-      }
-
-      /* =========================================================
-       SECTION RINGS
-    ========================================================= */
-
-      .section-ring {
-        position: absolute;
-
-        border-radius: 50%;
-
-        pointer-events: none;
-
-        border: 1px solid rgba(0, 174, 255, 0.12);
-
-        animation: rotateOne 25s linear infinite;
-      }
-
-      .section-ring.one {
-        width: 450px;
-        height: 450px;
-
-        right: -220px;
-        top: 80px;
-      }
-
-      .section-ring.two {
-        width: 280px;
-        height: 280px;
-
-        left: -140px;
-        bottom: 80px;
-
-        border-style: dashed;
-
-        animation: rotateTwo 20s linear infinite;
-      }
-
-      /* =========================================================
-       STATS
-    ========================================================= */
-
-      .stats {
-        color: white;
-
-        display: grid;
-
-        grid-template-columns: repeat(4, 1fr);
-
-        text-align: center;
-
-        gap: 20px;
-
-        position: relative;
-
-        overflow: hidden;
-
-        background: linear-gradient(
-          135deg,
-          rgba(3, 24, 50, 0.8),
-          rgba(0, 72, 125, 0.72)
-        );
-
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-
-        border-top: 1px solid rgba(77, 217, 255, 0.15);
-
-        border-bottom: 1px solid rgba(77, 217, 255, 0.15);
-      }
-
-      .stats::before {
-        content: "";
-
-        position: absolute;
-
-        width: 500px;
-        height: 500px;
-
-        border-radius: 50%;
-
-        border: 1px solid rgba(0, 200, 255, 0.15);
-
-        left: 50%;
-        top: -300px;
-
-        transform: translateX(-50%);
-
-        box-shadow: 0 0 80px rgba(0, 174, 255, 0.15);
-
-        animation: statsRotate 18s linear infinite;
-      }
-
-      @keyframes statsRotate {
-        from {
-          transform: translateX(-50%) rotate(0deg);
-        }
-
-        to {
-          transform: translateX(-50%) rotate(360deg);
-        }
-      }
-
-      .stat {
-        position: relative;
-
-        z-index: 2;
-
-        padding: 20px;
-
-        transition: 0.4s;
-      }
-
-      .stat:hover {
-        transform: translateY(-8px) scale(1.05);
-      }
-
-      .stat h2 {
-        font-size: 48px;
-
-        color: #4dd9ff;
-
-        text-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
-      }
-
-      .stat p {
-        margin-top: 8px;
-
-        color: #d7edff;
-      }
-
-      /* =========================================================
-       ABOUT
-    ========================================================= */
-
-      .about {
-        text-align: center;
-      }
-
-      .about .title,
-      .about p {
-        position: relative;
-        z-index: 3;
-      }
-
-      .about p {
-        max-width: 900px;
-
-        margin: auto;
-
-        font-size: 18px;
-
-        line-height: 1.9;
-
-        color: #53657a;
-      }
-
-      #ab_vrs {
-        font-weight: bold;
-      }
-
-      /* =========================================================
-       PROJECTS
-    ========================================================= */
-
-      .projects {
-        display: grid;
-
-        grid-template-columns: repeat(3, 1fr);
-
-        gap: 25px;
-
-        position: relative;
-
-        z-index: 5;
-      }
-
-      .project {
-        background: linear-gradient(
-          145deg,
-          rgba(255, 255, 255, 0.84),
-          rgba(239, 248, 255, 0.76)
-        );
-
-        border-radius: 18px;
-
-        overflow: hidden;
-
-        box-shadow: 0 10px 30px rgba(0, 60, 120, 0.1);
-
-        transition: 0.5s;
-
-        border: 1px solid rgba(0, 140, 255, 0.12);
-
-        backdrop-filter: blur(7px);
-        -webkit-backdrop-filter: blur(7px);
-      }
-
-      .project:hover {
-        transform: translateY(-12px) scale(1.01);
-
-        box-shadow: 0 20px 45px rgba(0, 100, 180, 0.18);
-      }
-
-      .project-image {
-        height: 230px;
-
-        position: relative;
-
-        display: flex;
-
-        align-items: center;
-        justify-content: center;
-
-        color: white;
-
-        font-size: 24px;
-
-        font-weight: bold;
-
-        overflow: hidden;
-      }
-
-      .project-image::before {
-        content: "";
-
-        position: absolute;
-
-        width: 200%;
-        height: 200%;
-
-        background: repeating-linear-gradient(
-          45deg,
-          transparent,
-          transparent 20px,
-          rgba(255, 255, 255, 0.07) 21px,
-          rgba(255, 255, 255, 0.07) 22px
-        );
-
-        animation: projectMove 12s linear infinite;
-      }
-
-      @keyframes projectMove {
-        from {
-          transform: translate(0, 0);
-        }
-
-        to {
-          transform: translate(-80px, 80px);
-        }
-      }
-
-      .web-project {
-        background: linear-gradient(135deg, #008cff, #062b55);
-      }
-
-      .app-project {
-        background: linear-gradient(135deg, #0066ff, #6426b5);
-      }
-
-      .software-project {
-        background: linear-gradient(135deg, #087f8c, #041b3b);
-      }
-
-      .project-image span {
-        position: relative;
-
-        z-index: 3;
-
-        text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-
-        transition: 0.4s;
-      }
-
-      .project-image a {
-        position: absolute;
-
-        z-index: 5;
-
-        bottom: -60px;
-
-        left: 50%;
-
-        transform: translateX(-50%);
-
-        background: white;
-
-        color: #0875bd;
-
-        padding: 11px 20px;
-
-        border-radius: 7px;
-
-        transition: 0.5s;
-
-        opacity: 0;
-      }
-
-      .project:hover .project-image a {
-        bottom: 25px;
-
-        opacity: 1;
-      }
-
-      .project:hover .project-image span {
-        transform: translateY(-30px);
-      }
-
-      .project-content {
-        padding: 25px;
-      }
-
-      .project-content h3 {
-        color: #0875bd;
-
-        margin-bottom: 10px;
-      }
-
-      .project-content p {
-        color: #58697b;
-
-        line-height: 1.7;
-      }
-
-      /* =========================================================
-       CONTACT
-    ========================================================= */
-
-      .contact-container {
-        max-width: 1050px;
-
-        margin: auto;
-
-        display: grid;
-
-        grid-template-columns: 1fr 1.3fr;
-
-        gap: 35px;
-
-        position: relative;
-
-        z-index: 5;
-      }
-
-      .contact-info,
-      .contact-form {
-        border-radius: 18px;
-
-        padding: 40px;
-
-        background: linear-gradient(
-          145deg,
-          rgba(9, 40, 75, 0.92),
-          rgba(10, 76, 128, 0.86)
-        );
-
-        box-shadow: 0 20px 45px rgba(0, 60, 120, 0.18);
-
-        border: 1px solid rgba(77, 217, 255, 0.15);
-
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-      }
-
-      .contact-info {
-        color: white;
-      }
-
-      .contact-info h2 {
-        font-size: 32px;
-
-        margin-bottom: 20px;
-      }
-
-      .contact-info p {
-        line-height: 1.7;
-
-        color: #d9efff;
-      }
-
-      .info-item {
-        display: flex;
-
-        gap: 15px;
-
-        margin: 25px 0;
-
-        color: #d9efff;
-
-        transition: 0.3s;
-      }
-
-      .info-item:hover {
-        transform: translateX(8px);
-
-        color: #4dd9ff;
-      }
-
-      .contact-form input,
-      .contact-form select,
-      .contact-form textarea {
-        width: 100%;
-
-        padding: 15px;
-
-        margin-bottom: 17px;
-
-        border: 1px solid rgba(255, 255, 255, 0.2);
-
-        border-radius: 8px;
-
-        background: rgba(255, 255, 255, 0.96);
-
-        color: #172033;
-
-        outline: none;
-
-        transition: 0.3s;
-      }
-
-      .contact-form textarea {
-        resize: vertical;
-        min-height: 140px;
-      }
-
-      .contact-form input:focus,
-      .contact-form select:focus,
-      .contact-form textarea:focus {
-        border-color: #4dd9ff;
-
-        box-shadow:
-          0 0 0 3px rgba(77, 217, 255, 0.15),
-          0 0 15px rgba(0, 174, 255, 0.2);
-
-        transform: translateY(-2px);
-      }
-
-      .contact-form button {
-        border: none;
-      }
-
-      /* =========================================================
-       FOOTER
-    ========================================================= */
-
-      footer {
-        position: relative;
-
-        background: linear-gradient(135deg, #020d1d, #062a4d, #020d1d);
-
-        color: white;
-
-        padding: 70px 8% 20px;
-
-        overflow: hidden;
-      }
-
-      footer::before {
-        content: "";
-
-        position: absolute;
-
-        width: 600px;
-        height: 600px;
-
-        border-radius: 50%;
-
-        border: 1px solid rgba(0, 174, 255, 0.12);
-
-        top: -450px;
-        left: 50%;
-
-        transform: translateX(-50%);
-
-        animation: footerRing 20s linear infinite;
-      }
-
-      @keyframes footerRing {
-        to {
-          transform: translateX(-50%) rotate(360deg);
-        }
-      }
-
-      .footer-container {
-        max-width: 1200px;
-
-        margin: auto;
-
-        display: grid;
-
-        grid-template-columns:
-          1.5fr
-          1fr
-          1.3fr
-          1fr;
-
-        gap: 40px;
-
-        position: relative;
-
-        z-index: 2;
-      }
-
-      .footer-box h3 {
-        color: #4dd9ff;
-
-        margin-bottom: 20px;
-      }
-
-      .footer-box p,
-      .footer-box a {
-        color: #b9d3e8;
-
-        line-height: 1.7;
-
-        margin-bottom: 12px;
-      }
-
-      .footer-box a {
-        display: block;
-
-        transition: 0.3s;
-      }
-
-      .footer-box a:hover {
-        color: #4dd9ff;
-
-        transform: translateX(5px);
-      }
-
-      .footer-logo {
-        width: 58px;
-        height: 58px;
-
-        display: flex;
-
-        align-items: center;
-        justify-content: center;
-
-        border-radius: 14px;
-
-        border: 1px solid #4dd9ff;
-
-        color: #4dd9ff;
-
-        font-size: 25px;
-
-        font-weight: bold;
-
-        margin-bottom: 15px;
-
-        box-shadow: 0 0 15px rgba(0, 174, 255, 0.3);
-
-        animation: footerLogo 3s ease-in-out infinite;
-      }
-
-      @keyframes footerLogo {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-
-        50% {
-          transform: translateY(-7px) rotate(3deg);
-        }
-      }
-
-      .social {
-        display: flex;
-
-        gap: 10px;
-
-        margin-top: 20px;
-      }
-
-      .social a {
-        width: 40px;
-        height: 40px;
-
-        display: flex;
-
-        align-items: center;
-        justify-content: center;
-
-        background: rgba(0, 140, 255, 0.15);
-
-        border: 1px solid rgba(77, 217, 255, 0.25);
-
-        border-radius: 50%;
-
-        color: white;
-
-        margin: 0;
-
-        transition: 0.3s;
-      }
-
-      .social a:hover {
-        background: #008cff;
-
-        transform: translateY(-5px);
-
-        box-shadow: 0 0 15px rgba(0, 174, 255, 0.5);
-      }
-
-      .footer-bottom {
-        max-width: 1200px;
-
-        margin: 50px auto 0;
-
-        padding-top: 20px;
-
-        border-top: 1px solid rgba(255, 255, 255, 0.12);
-
-        display: flex;
-
-        justify-content: space-between;
-
-        align-items: center;
-
-        position: relative;
-
-        z-index: 2;
-      }
-
-      .footer-bottom p {
-        color: #819bb2;
-      }
-
-      .top-btn {
-        width: 46px;
-        height: 46px;
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        background: linear-gradient(135deg, #4dd9ff, #008cff);
-        color: white !important;
-        border: 1px solid rgba(255,255,255,.28);
-        border-radius: 50%;
-        box-shadow: 0 0 18px rgba(0,174,255,.45);
-        transition: transform .35s ease, box-shadow .35s ease, background .35s ease;
-        animation: topButtonFloat 2.2s ease-in-out infinite;
-      }
-
-      .top-btn::before {
-        content: "";
-        position: absolute;
-        inset: -5px;
-        border: 1px solid rgba(77,217,255,.35);
-        border-radius: 50%;
-        animation: topButtonPulse 2.2s ease-out infinite;
-        pointer-events: none;
-      }
-
-      .top-btn::after {
-        content: "";
-        position: absolute;
-        inset: 3px;
-        border-radius: 50%;
-        background: linear-gradient(180deg, rgba(255,255,255,.22), transparent 45%);
-        pointer-events: none;
-      }
-
-      @keyframes topButtonFloat {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-4px); }
-      }
-
-      @keyframes topButtonPulse {
-        0% { transform: scale(.92); opacity: .7; }
-        70%, 100% { transform: scale(1.35); opacity: 0; }
-      }
-
-      .top-btn:hover {
-        transform: translateY(-7px) scale(1.08);
-        background: linear-gradient(135deg, #7be5ff, #00a2ff);
-        box-shadow: 0 0 25px rgba(0,200,255,.75), 0 0 55px rgba(0,140,255,.28);
-        animation-play-state: paused;
-      }
-
-      .top-btn:active {
-        transform: translateY(-2px) scale(.96);
-      }
-
-      /* =========================================================
-       SCROLL REVEAL
-    ========================================================= */
-
-      .reveal {
-        opacity: 0;
-
-        transform: translateY(70px) scale(0.94);
-
-        filter: blur(5px);
-
-        transition:
-          opacity 0.9s ease,
-          transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1),
-          filter 0.9s ease;
-      }
-
-      .reveal.show {
-        opacity: 1;
-
-        transform: translateY(0) scale(1);
-
-        filter: blur(0);
-      }
-
-      /* =========================================================
-       FLOATING SHINE
-    ========================================================= */
-
-      .shine {
-        position: absolute;
-
-        width: 120px;
-        height: 120px;
-
-        border-radius: 50%;
-
-        background: radial-gradient(
-          circle,
-          rgba(77, 217, 255, 0.2),
-          transparent 70%
-        );
-
-        filter: blur(10px);
-
-        pointer-events: none;
-
-        animation: shineFloat 7s ease-in-out infinite;
-      }
-
-      @keyframes shineFloat {
-        0%,
-        100% {
-          transform: translate(0, 0);
-        }
-
-        50% {
-          transform: translate(80px, -50px);
-        }
-      }
-
-      /* =========================================================
-       MOBILE
-    ========================================================= */
-
-      @media (max-width: 900px) {
-        .services,
-        .projects {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .footer-container {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .tech-orb.orb1 {
-          width: 330px;
-          height: 330px;
-
-          right: -70px;
-        }
-
-        .tech-orb.orb2 {
-          right: -20px;
-        }
-      }
-
-      @media (max-width: 768px) {
-        header {
-          padding: 12px 20px;
-        }
-
-        .logo-text strong {
-          font-size: 22px;
-        }
-
-        .logo-text small {
-          display: none;
-        }
-
-        /* ================= MOBILE MENU ================= */
-
-        .menu-btn {
-          display: flex;
-
-          align-items: center;
-          justify-content: center;
-        }
-
-        nav {
-          display: none;
-
-          position: absolute;
-
-          left: 0;
-          top: 100%;
-
-          width: 100%;
-
-          flex-direction: column;
-
-          align-items: stretch;
-
-          background: rgba(4, 20, 43, 0.98);
-
-          padding: 10px 0;
-
-          border-bottom: 1px solid rgba(77, 184, 255, 0.2);
-
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
-
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-
-          max-height: calc(100vh - 72px);
-
-          overflow-y: auto;
-        }
-
-        nav.active {
-          display: flex;
-
-          animation: mobileMenu 0.3s ease;
-        }
-
-        @keyframes mobileMenu {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        nav > a,
-        .dropdown > a {
-          width: 100%;
-
-          text-align: center;
-
-          margin: 0;
-
-          padding: 15px;
-
-          color: white;
-        }
-
-        nav > a::after,
-        .dropdown > a::after {
-          display: none;
-        }
-
-        .dropdown {
-          width: 100%;
-
-          text-align: center;
-        }
-
-        .dropdown:hover .dropdown-menu {
-          opacity: 0;
-
-          visibility: hidden;
-
-          transform: translateY(10px);
-        }
-
-        .dropdown.services-open .dropdown-menu {
-          opacity: 1;
-
-          visibility: visible;
-
-          transform: none;
-        }
-
-        .dropdown-menu {
-          position: static;
-
-          width: 92%;
-
-          margin: 0 auto 5px;
-
-          display: none;
-
-          opacity: 1;
-
-          visibility: visible;
-
-          transform: none;
-
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .dropdown.services-open .dropdown-menu {
-          display: block;
-
-          animation: dropdownMobile 0.3s ease;
-        }
-
-        @keyframes dropdownMobile {
-          from {
-            opacity: 0;
-            transform: translateY(-8px);
-          }
-
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .dropdown-menu a {
-          text-align: center;
-
-          padding: 12px;
-        }
-
-        /* ================= HERO ================= */
-
-        .hero {
-          min-height: 680px;
-
-          text-align: center;
-
-          padding: 80px 20px;
-        }
-
-        .hero-content {
-          margin: auto;
-
-          z-index: 20;
-        }
-
-        .hero-content h1 {
-          font-size: 42px;
-        }
-
-        .hero-content img {
-          width: 240px;
-        }
-
-        .hero-content p {
-          font-size: 17px;
-        }
-
-        .hero-content .btn {
-          margin-top: 25px;
-        }
-
-        /* =====================================================
-         MOBILE ORBS
-         EXACT CENTER
-      ===================================================== */
-
-        .tech-orb {
-          left: 50%;
-          right: auto;
-
-          top: 58%;
-
-          transform: translateX(-50%);
-
-          opacity: 0.24;
-        }
-
-        .orb1 {
-          width: 250px;
-          height: 250px;
-        }
-
-        .orb2 {
-          width: 175px;
-          height: 175px;
-
-          left: 50%;
-          right: auto;
-
-          top: 64%;
-
-          opacity: 0.17;
-        }
-
-        .orb1 {
-          animation:
-            mobileOrbRotate 22s linear infinite,
-            mobileOrbFloat 7s ease-in-out infinite;
-        }
-
-        .orb2 {
-          animation:
-            mobileOrbRotate 26s linear infinite,
-            mobileOrbFloat 8s ease-in-out infinite reverse;
-        }
-
-        @keyframes mobileOrbRotate {
-          from {
-            transform: translateX(-50%) rotate(0deg);
-          }
-
-          to {
-            transform: translateX(-50%) rotate(360deg);
-          }
-        }
-
-        @keyframes mobileOrbFloat {
-          0%,
-          100% {
-            margin-top: 0;
-          }
-
-          50% {
-            margin-top: -12px;
-          }
-        }
-
-        /* ================= SECTIONS ================= */
-
-        section {
-          padding: 75px 20px;
-        }
-
-        .title {
-          font-size: 34px;
-        }
-
-        .subtitle {
-          margin-bottom: 40px;
-        }
-
-        .services,
-        .projects {
-          grid-template-columns: 1fr;
-        }
-
-        /* ================= STATS ================= */
-
-        .stats {
-          grid-template-columns: repeat(2, 1fr);
-
-          padding: 65px 20px;
-        }
-
-        .stat h2 {
-          font-size: 38px;
-        }
-
-        /* ================= ABOUT ================= */
-
-        .about {
-          background: linear-gradient(
-            135deg,
-            rgba(255, 255, 255, 0.62),
-            rgba(218, 239, 255, 0.52)
-          );
-
-          backdrop-filter: blur(2px);
-          -webkit-backdrop-filter: blur(2px);
-        }
-
-        /* ================= PROJECTS ================= */
-
-        #projects {
-          background: linear-gradient(
-            135deg,
-            rgba(241, 249, 255, 0.62),
-            rgba(214, 238, 255, 0.5)
-          );
-
-          backdrop-filter: blur(2px);
-          -webkit-backdrop-filter: blur(2px);
-        }
-
-        /* ================= CONTACT ================= */
-
-        .contact {
-          background: linear-gradient(
-            135deg,
-            rgba(226, 241, 255, 0.58),
-            rgba(244, 249, 255, 0.6)
-          );
-
-          backdrop-filter: blur(2px);
-          -webkit-backdrop-filter: blur(2px);
-        }
-
-        .contact-container {
-          grid-template-columns: 1fr;
-        }
-
-        .contact-info,
-        .contact-form {
-          padding: 25px;
-        }
-
-        /* ================= SECTION GLOWS ================= */
-
-        .about::after,
-        #projects::after,
-        .contact::after {
-          width: 280px;
-          height: 280px;
-
-          opacity: 0.5;
-        }
-
-        /* ================= FOOTER ================= */
-
-        .footer-container {
-          grid-template-columns: 1fr;
-
-          text-align: center;
-        }
-
-        .footer-logo {
-          margin: auto auto 15px;
-        }
-
-        .social {
-          justify-content: center;
-        }
-
-        .footer-bottom {
-          flex-direction: column;
-
-          gap: 20px;
-
-          text-align: center;
-        }
-
-        .background-ring.three,
-        .background-ring.two {
-          opacity: 0.4;
-        }
-      }
-
-      /* =========================================================
-       SMALL MOBILE
-    ========================================================= */
-
-      @media (max-width: 480px) {
-        .logo-mark {
-          width: 42px;
-          height: 42px;
-        }
-
-        .logo-text strong {
-          font-size: 19px;
-          letter-spacing: 3px;
-        }
-
-        .hero {
-          min-height: 650px;
-        }
-
-        .hero-content h1 {
-          font-size: 36px;
-        }
-
-        .hero-content p {
-          font-size: 16px;
-        }
-
-        .title {
-          font-size: 30px;
-        }
-
-        .card {
-          padding: 28px;
-        }
-
-        .stats {
-          gap: 10px;
-        }
-
-        .stat {
-          padding: 15px 5px;
-        }
-
-        .stat h2 {
-          font-size: 32px;
-        }
-
-        .stat p {
-          font-size: 14px;
-        }
-
-        /* SMALL MOBILE ORB */
-
-        .tech-orb {
-          top: 60%;
-          opacity: 0.2;
-        }
-
-        .orb1 {
-          width: 210px;
-          height: 210px;
-        }
-
-        .orb2 {
-          width: 145px;
-          height: 145px;
-          top: 63%;
-        }
-
-        .about::after,
-        #projects::after,
-        .contact::after {
-          width: 230px;
-          height: 230px;
-        }
-      }
-
-      /* =========================================================
-       REDUCE MOTION ACCESSIBILITY
-    ========================================================= */
-
-      @media (prefers-reduced-motion: reduce) {
-        *,
-        *::before,
-        *::after {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
-          scroll-behavior: auto !important;
-        }
-      }
-
-      /* =========================================================
-   ABOUT / PROJECTS / CONTACT - TRANSPARENT PREMIUM DESIGN
-   ========================================================= */
-
-      /* Full section transparent */
-      #about,
-      #projects,
-      .contact {
-        background: transparent !important;
-        position: relative;
-        isolation: isolate;
-      }
-
-      /* Section ke pseudo glow ko visible rakho */
-      #about::before,
-      #projects::before,
-      .contact::before {
-        z-index: -1;
-        opacity: 0.8;
-      }
-
-      /* =========================================================
-   ABOUT CONTENT - ONLY CONTENT AREA HAS GLASS
-   ========================================================= */
-
-      .about {
-        text-align: center;
-        padding: 110px 8%;
-      }
-
-      .about .title {
-        display: table;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 18px 35px;
-
-        color: #082344;
-
-        background: rgba(255, 255, 255, 0.78);
-
-        border: 1px solid rgba(255, 255, 255, 0.65);
-
-        border-radius: 18px;
-
-        box-shadow:
-          0 15px 40px rgba(0, 60, 120, 0.12),
-          inset 0 1px 0 rgba(255, 255, 255, 0.8);
-
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-      }
-
-      .about > p {
-        max-width: 900px;
-
-        margin: 25px auto 0;
-
-        padding: 30px 35px;
-
-        font-size: 18px;
-
-        line-height: 1.9;
-
-        color: #30465d;
-
-        background: rgba(255, 255, 255, 0.72);
-
-        border: 1px solid rgba(255, 255, 255, 0.65);
-
-        border-radius: 20px;
-
-        box-shadow:
-          0 18px 45px rgba(0, 60, 120, 0.12),
-          inset 0 1px 0 rgba(255, 255, 255, 0.8);
-
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-
-        transition: 0.4s ease;
-      }
-
-      .about > p:hover {
-        transform: translateY(-5px);
-
-        box-shadow:
-          0 25px 55px rgba(0, 100, 180, 0.18),
-          0 0 25px rgba(0, 174, 255, 0.1);
-      }
-
-      /* =========================================================
-   PROJECTS - TRANSPARENT SECTION
-   ========================================================= */
-
-      #projects {
-        padding-top: 110px;
-        padding-bottom: 110px;
-      }
-
-      /* Project heading only */
-      #projects .title {
-        display: table;
-
-        margin-left: auto;
-        margin-right: auto;
-
-        padding: 15px 30px;
-
-        background: rgba(255, 255, 255, 0.78);
-
-        border: 1px solid rgba(255, 255, 255, 0.65);
-
-        border-radius: 16px;
-
-        box-shadow:
-          0 15px 35px rgba(0, 60, 120, 0.1),
-          inset 0 1px 0 rgba(255, 255, 255, 0.8);
-
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-      }
-
-      /* Project subtitle */
-      #projects .subtitle {
-        max-width: 700px;
-
-        padding: 18px 25px;
-
-        background: rgba(255, 255, 255, 0.68);
-
-        border: 1px solid rgba(255, 255, 255, 0.55);
-
-        border-radius: 15px;
-
-        box-shadow: 0 12px 30px rgba(0, 60, 120, 0.08);
-
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-      }
-
-      /* =========================================================
-   CONTACT - TRANSPARENT SECTION
-   ========================================================= */
-
-      .contact {
-        padding-top: 110px;
-        padding-bottom: 110px;
-      }
-
-      /* Contact title */
-      .contact .title {
-        display: table;
-
-        margin-left: auto;
-        margin-right: auto;
-
-        padding: 15px 30px;
-
-        background: rgba(255, 255, 255, 0.78);
-
-        border: 1px solid rgba(255, 255, 255, 0.65);
-
-        border-radius: 16px;
-
-        box-shadow:
-          0 15px 35px rgba(0, 60, 120, 0.1),
-          inset 0 1px 0 rgba(255, 255, 255, 0.8);
-
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-      }
-
-      /* Contact subtitle */
-      .contact .subtitle {
-        max-width: 700px;
-
-        padding: 18px 25px;
-
-        background: rgba(255, 255, 255, 0.68);
-
-        border: 1px solid rgba(255, 255, 255, 0.55);
-
-        border-radius: 15px;
-
-        box-shadow: 0 12px 30px rgba(0, 60, 120, 0.08);
-
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-      }
-
-      /* =========================================================
-   CONTACT BOXES - KEEP CONTENT BACKGROUND
-   ========================================================= */
-
-      .contact-info,
-      .contact-form {
-        background: linear-gradient(
-          145deg,
-          rgba(9, 40, 75, 0.88),
-          rgba(10, 76, 128, 0.82)
-        ) !important;
-
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
-
-        border: 1px solid rgba(77, 217, 255, 0.25);
-
-        box-shadow:
-          0 25px 60px rgba(0, 40, 90, 0.22),
-          inset 0 1px 0 rgba(255, 255, 255, 0.08);
-      }
-
-      /* =========================================================
-   PROJECT CARDS - GLASS INSTEAD OF SOLID WHITE
-   ========================================================= */
-
-      .project {
-        background: rgba(255, 255, 255, 0.78) !important;
-
-        border: 1px solid rgba(255, 255, 255, 0.65);
-
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-
-        box-shadow:
-          0 18px 45px rgba(0, 60, 120, 0.12),
-          inset 0 1px 0 rgba(255, 255, 255, 0.75);
-
-        transition:
-          transform 0.5s ease,
-          box-shadow 0.5s ease,
-          background 0.5s ease;
-      }
-
-      .project:hover {
-        background: rgba(255, 255, 255, 0.88) !important;
-
-        transform: translateY(-12px) scale(1.015);
-
-        box-shadow:
-          0 25px 60px rgba(0, 100, 180, 0.2),
-          0 0 30px rgba(0, 174, 255, 0.12);
-      }
-
-      /* =========================================================
-   MOBILE
-   ========================================================= */
-
-      @media (max-width: 768px) {
-        #about,
-        #projects,
-        .contact {
-          background: transparent !important;
-        }
-
-        .about {
-          padding: 75px 20px;
-        }
-
-        .about .title,
-        #projects .title,
-        .contact .title {
-          padding: 12px 20px;
-
-          font-size: 30px;
-
-          border-radius: 14px;
-        }
-
-        .about > p {
-          padding: 25px 20px;
-
-          font-size: 16px;
-
-          line-height: 1.8;
-
-          border-radius: 16px;
-        }
-
-        #projects,
-        .contact {
-          padding: 75px 20px;
-        }
-
-        #projects .subtitle,
-        .contact .subtitle {
-          padding: 15px 18px;
-
-          font-size: 15px;
-
-          border-radius: 13px;
-        }
-
-        .project {
-          background: rgba(255, 255, 255, 0.82) !important;
-        }
-
-        .contact-info,
-        .contact-form {
-          background: linear-gradient(
-            145deg,
-            rgba(9, 40, 75, 0.92),
-            rgba(10, 76, 128, 0.88)
-          ) !important;
-        }
-      }
-    
-/* =========================================================
-   MOBILE PERFORMANCE MODE - NO SCROLL ANIMATIONS
-   Keeps the design but removes expensive mobile effects.
-========================================================= */
-@media (max-width: 768px) {
-  html { scroll-behavior: auto !important; }
-
-  /* Stop every decorative animation on mobile */
-  .site-background *,
-  .light,
-  .grid-background,
-  .particle,
-  .background-ring,
-  .tech-orb,
-  section::before,
-  .hero-content img,
-  .hero-content h1,
-  .hero-content p,
-  .hero .btn,
-  header {
-    animation: none !important;
-  }
-
-  /* Remove expensive visual effects */
-  .light,
-  .grid-background,
-  .particles,
-  .background-ring,
-  .tech-orb {
-    display: none !important;
-  }
-
-  header,
-  .dropdown-menu,
-  #services,
-  .about,
-  #projects,
-  #contact {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-  }
-
-  /* No reveal transition while scrolling */
-  .reveal,
-  .reveal.show {
-    opacity: 1 !important;
-    transform: none !important;
-    filter: none !important;
-    transition: none !important;
-  }
-
-  /* Disable hover transitions on touch devices */
-  * {
-    scroll-behavior: auto !important;
-  }
-
-  .btn,
-  .logo-mark,
-  nav > a,
-  .dropdown > a,
-  .dropdown-menu a,
-  .menu-btn,
-  .card,
-  .service-card,
-  .project-card {
-    transition: none !important;
-  }
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VRS IT Solutions</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
-/* Very low-power phones: simplify even further */
-@media (max-width: 480px) {
-  section::before { display: none !important; }
-  * { box-shadow: none !important; text-shadow: none !important; }
-  .top-btn {
-    animation: topButtonFloat 2.8s ease-in-out infinite;
-    box-shadow: 0 0 12px rgba(0,174,255,.28);
-  }
-  .top-btn::before { animation-duration: 2.8s; }
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#080808;
+    color:#fff;
+    overflow-x:hidden;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .top-btn, .top-btn::before { animation: none !important; }
+/* ================= NAVBAR ================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:20px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    z-index:1000;
+    background:rgba(8,8,8,.55);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-
-/* =========================================================
-   DESKTOP PREMIUM MOTION - SERVICES / ABOUT / PROJECTS
-   Smooth, layered and GPU-friendly for laptop/PC
-========================================================= */
-@media (min-width: 769px) {
-  /* Section headings enter cleanly with the content */
-  #services .title,
-  #projects .title,
-  .about .title,
-  #services .subtitle,
-  #projects .subtitle,
-  .about > p {
-    will-change: transform, opacity;
-  }
-
-  /* Services: polished glass cards */
-  #services .card {
-    transform: translateY(0) perspective(900px) rotateX(0deg);
-    will-change: transform, box-shadow;
-  }
-
-  #services .card:nth-child(1) { transition-delay: 0s; }
-  #services .card:nth-child(2) { transition-delay: 0.08s; }
-  #services .card:nth-child(3) { transition-delay: 0.16s; }
-  #services .card:nth-child(4) { transition-delay: 0.24s; }
-  #services .card:nth-child(5) { transition-delay: 0.32s; }
-  #services .card:nth-child(6) { transition-delay: 0.40s; }
-
-  #services .card:hover {
-    transform: translateY(-14px) perspective(900px) rotateX(2deg) rotateY(-1deg) scale(1.015);
-  }
-
-  #services .card::after {
-    pointer-events: none;
-  }
-
-  #services .icon {
-    transform-origin: center;
-  }
-
-  #services .card:hover .icon {
-    animation: desktopIconPop 0.55s ease both;
-  }
-
-  @keyframes desktopIconPop {
-    0% { transform: translateY(0) scale(1) rotate(0); }
-    55% { transform: translateY(-8px) scale(1.14) rotate(7deg); }
-    100% { transform: translateY(-5px) scale(1.08) rotate(4deg); }
-  }
-
-  /* About: premium glass presentation */
-  #about .title {
-    position: relative;
-    overflow: hidden;
-    box-shadow:
-      0 18px 45px rgba(0, 60, 120, 0.14),
-      0 0 0 1px rgba(77, 217, 255, 0.08),
-      inset 0 1px 0 rgba(255,255,255,.9);
-  }
-
-  #about .title::after {
-    content: "";
-    position: absolute;
-    top: -20%;
-    left: -80%;
-    width: 45%;
-    height: 140%;
-    background: linear-gradient(105deg, transparent, rgba(255,255,255,.7), transparent);
-    transform: skewX(-20deg);
-    animation: aboutShine 5s ease-in-out infinite;
-    pointer-events: none;
-  }
-
-  @keyframes aboutShine {
-    0%, 65% { left: -80%; }
-    100% { left: 140%; }
-  }
-
-  #about > p {
-    position: relative;
-    overflow: hidden;
-    transition: transform .45s ease, box-shadow .45s ease, border-color .45s ease;
-  }
-
-  #about > p::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 4px;
-    height: 100%;
-    background: linear-gradient(#00bfff, #0875bd);
-    box-shadow: 0 0 18px rgba(0,191,255,.45);
-  }
-
-  #about > p:hover {
-    transform: translateY(-8px);
-    border-color: rgba(0,174,255,.28);
-    box-shadow:
-      0 28px 65px rgba(0,80,150,.18),
-      0 0 30px rgba(0,174,255,.12);
-  }
-
-  /* Projects: stronger visual depth */
-  #projects .project {
-    position: relative;
-    will-change: transform, box-shadow;
-  }
-
-  #projects .project:nth-child(1) { transition-delay: 0s; }
-  #projects .project:nth-child(2) { transition-delay: .10s; }
-  #projects .project:nth-child(3) { transition-delay: .20s; }
-
-  #projects .project::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    border: 1px solid transparent;
-    background: linear-gradient(135deg, rgba(77,217,255,.45), transparent 35%, transparent 65%, rgba(0,140,255,.25)) border-box;
-    -webkit-mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity .45s ease;
-    pointer-events: none;
-  }
-
-  #projects .project:hover::after {
-    opacity: 1;
-  }
-
-  #projects .project-image {
-    transition: transform .6s cubic-bezier(.2,.8,.2,1);
-  }
-
-  #projects .project:hover .project-image {
-    transform: scale(1.035);
-  }
-
-  #projects .project-image span {
-    transition: transform .5s ease, letter-spacing .5s ease, text-shadow .5s ease;
-  }
-
-  #projects .project:hover .project-image span {
-    transform: translateY(-28px) scale(1.04);
-    letter-spacing: 1px;
-    text-shadow: 0 0 20px rgba(255,255,255,.7), 0 0 35px rgba(0,191,255,.55);
-  }
-
-  #projects .project-image a {
-    box-shadow: 0 8px 25px rgba(0,0,0,.22);
-  }
-
-  /* Scroll reveal: smoother and more premium on desktop */
-  .reveal {
-    transform: translateY(45px) scale(.975);
-    filter: blur(2px);
-    transition:
-      opacity .75s ease,
-      transform .85s cubic-bezier(.16,1,.3,1),
-      filter .75s ease;
-  }
-
-  .reveal.show {
-    transform: translateY(0) scale(1);
-    filter: blur(0);
-  }
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:24px;
+    font-weight:bold;
+    letter-spacing:1px;
 }
 
+.logo img{
+    width:45px;
+    height:45px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+.logo span{
+    color:#fff;
+}
+
+.logo b{
+    color:#ff6b00;
+}
+
+nav{
+    display:flex;
+    gap:35px;
+}
+
+nav a{
+    color:#ddd;
+    text-decoration:none;
+    font-size:15px;
+    transition:.3s;
+    position:relative;
+}
+
+nav a:hover{
+    color:#ff6b00;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    left:0;
+    bottom:-7px;
+    background:#ff6b00;
+    transition:.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+.menu{
+    display:none;
+    font-size:30px;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    padding:150px 7% 80px;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-content{
+    width:60%;
+    z-index:5;
+}
+
+.small-title{
+    color:#ff6b00;
+    letter-spacing:4px;
+    font-size:14px;
+    margin-bottom:20px;
+    text-transform:uppercase;
+}
+
+.hero h1{
+    font-size:clamp(45px,7vw,90px);
+    line-height:1;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#ff6b00;
+}
+
+.hero p{
+    max-width:650px;
+    color:#aaa;
+    font-size:18px;
+    line-height:1.7;
+    margin-bottom:35px;
+}
+
+.buttons{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:15px 28px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+    display:inline-block;
+}
+
+.primary{
+    background:#ff6b00;
+    color:white;
+}
+
+.primary:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(255,107,0,.3);
+}
+
+.secondary{
+    border:1px solid #555;
+    color:white;
+}
+
+.secondary:hover{
+    border-color:#ff6b00;
+    color:#ff6b00;
+    transform:translateY(-5px);
+}
+
+/* ================= ORBS ================= */
+
+.orb{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(1px);
+    opacity:.7;
+    animation:float 7s ease-in-out infinite;
+}
+
+.orb1{
+    width:420px;
+    height:420px;
+    right:5%;
+    top:15%;
+    background:radial-gradient(circle at 30% 30%,#ffb066,#ff4500 40%,transparent 70%);
+}
+
+.orb2{
+    width:220px;
+    height:220px;
+    right:32%;
+    bottom:8%;
+    background:radial-gradient(circle,#ff8b3d,transparent 70%);
+    animation-delay:1.5s;
+}
+
+.orb3{
+    width:150px;
+    height:150px;
+    right:8%;
+    bottom:25%;
+    background:radial-gradient(circle,#ffcc99,transparent 70%);
+    animation-delay:3s;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0) translateX(0) rotate(0);
+    }
+    50%{
+        transform:translateY(-30px) translateX(20px) rotate(15deg);
+    }
+}
+
+/* ================= GLOW ================= */
+
+.glow{
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:#ff6b00;
+    filter:blur(180px);
+    opacity:.12;
+    right:-100px;
+    top:200px;
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+    padding:110px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title small{
+    color:#ff6b00;
+    letter-spacing:4px;
+}
+
+.section-title h2{
+    font-size:48px;
+    margin-top:12px;
+}
+
+.section-title p{
+    color:#888;
+    margin-top:15px;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-img{
+    min-height:420px;
+    border-radius:30px;
+    background:
+    linear-gradient(145deg,rgba(255,107,0,.25),rgba(255,255,255,.02)),
+    #111;
+    border:1px solid rgba(255,255,255,.1);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.about-img::before{
+    content:"VRS";
+    font-size:150px;
+    font-weight:900;
+    color:rgba(255,107,0,.08);
+    position:absolute;
+}
+
+.about-circle{
+    width:230px;
+    height:230px;
+    border:2px solid #ff6b00;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    animation:spin 12s linear infinite;
+}
+
+.about-circle span{
+    font-size:45px;
+    font-weight:bold;
+    color:#ff6b00;
+    animation:spinReverse 12s linear infinite;
+}
+
+@keyframes spin{
+    to{transform:rotate(360deg);}
+}
+
+@keyframes spinReverse{
+    to{transform:rotate(-360deg);}
+}
+
+.about-text h3{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    color:#999;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.stats{
+    display:flex;
+    gap:35px;
+    margin-top:30px;
+}
+
+.stat h4{
+    color:#ff6b00;
+    font-size:35px;
+}
+
+.stat p{
+    font-size:13px;
+    margin:0;
+}
+
+/* ================= SERVICES ================= */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    padding:35px;
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:25px;
+    transition:.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    width:150px;
+    height:150px;
+    background:#ff6b00;
+    filter:blur(100px);
+    opacity:0;
+    right:-50px;
+    top:-50px;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+    border-color:rgba(255,107,0,.5);
+}
+
+.card:hover::before{
+    opacity:.3;
+}
+
+.icon{
+    width:65px;
+    height:65px;
+    border-radius:18px;
+    background:rgba(255,107,0,.1);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    margin-bottom:25px;
+    transition:.4s;
+}
+
+.card:hover .icon{
+    transform:rotate(10deg) scale(1.1);
+    background:#ff6b00;
+}
+
+.card h3{
+    font-size:22px;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#888;
+    line-height:1.7;
+}
+
+/* ================= PROJECTS ================= */
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.project{
+    height:300px;
+    border-radius:25px;
+    overflow:hidden;
+    position:relative;
+    background:linear-gradient(135deg,#171717,#090909);
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.project-content{
+    position:absolute;
+    left:25px;
+    bottom:25px;
+    z-index:2;
+}
+
+.project h3{
+    font-size:25px;
+    margin-bottom:8px;
+}
+
+.project p{
+    color:#aaa;
+}
+
+.project::before{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    background:#ff6b00;
+    filter:blur(90px);
+    opacity:.2;
+    right:-50px;
+    top:-60px;
+    transition:.5s;
+}
+
+.project:hover::before{
+    transform:scale(1.5);
+    opacity:.4;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-box{
+    max-width:900px;
+    margin:auto;
+    padding:50px;
+    border-radius:30px;
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.form input,
+.form textarea{
+    width:100%;
+    padding:17px;
+    background:#111;
+    border:1px solid #292929;
+    border-radius:12px;
+    color:white;
+    outline:none;
+    font-size:15px;
+}
+
+.form input:focus,
+.form textarea:focus{
+    border-color:#ff6b00;
+}
+
+.form textarea{
+    grid-column:1/3;
+    height:150px;
+    resize:none;
+}
+
+.form button{
+    grid-column:1/3;
+    border:none;
+    cursor:pointer;
+    font-size:16px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:50px 7%;
+    border-top:1px solid rgba(255,255,255,.08);
+    text-align:center;
+    color:#666;
+}
+
+footer span{
+    color:#ff6b00;
+}
+
+/* ================= SCROLL ANIMATION ================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(50px);
+    transition:1s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    nav{
+        position:absolute;
+        top:85px;
+        right:7%;
+        width:230px;
+        padding:25px;
+        background:#111;
+        border:1px solid #333;
+        border-radius:20px;
+        flex-direction:column;
+        gap:22px;
+        display:none;
+    }
+
+    nav.active{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero-content{
+        width:100%;
+    }
+
+    .orb1{
+        opacity:.35;
+        right:-100px;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .services-grid,
+    .projects{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    header{
+        padding:15px 5%;
+    }
+
+    section{
+        padding:80px 5%;
+    }
+
+    .hero{
+        padding:130px 5% 70px;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .section-title h2{
+        font-size:36px;
+    }
+
+    .services-grid,
+    .projects{
+        grid-template-columns:1fr;
+    }
+
+    .about-img{
+        min-height:300px;
+    }
+
+    .about-circle{
+        width:180px;
+        height:180px;
+    }
+
+    .stats{
+        gap:20px;
+    }
+
+    .stat h4{
+        font-size:28px;
+    }
+
+    .contact-box{
+        padding:25px;
+    }
+
+    .form{
+        grid-template-columns:1fr;
+    }
+
+    .form textarea,
+    .form button{
+        grid-column:1;
+    }
+}
 </style>
-  </head>
+</head>
 
-  <body>
-    <!-- ========================================================
-       GLOBAL ANIMATED BACKGROUND
-  ========================================================= -->
+<body>
 
-    <div class="site-background">
-      <div class="light one"></div>
-      <div class="light two"></div>
-      <div class="light three"></div>
+<!-- ================= HEADER ================= -->
 
-      <div class="grid-background"></div>
+<header>
 
-      <div class="background-ring one"></div>
-      <div class="background-ring two"></div>
-      <div class="background-ring three"></div>
-
-      <div class="particles">
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-      </div>
+    <div class="logo">
+        <!-- Agar logo image hai to yaha filename change kar sakte ho -->
+        <img src="vrs_logo.jpeg" alt="VRS Logo">
+        <span>VRS <b>IT</b></span>
     </div>
 
-    <!-- ========================================================
-       HEADER
-  ========================================================= -->
-
-    <header id="header">
-      <a href="#home" class="logo">
-        <div class="logo-mark">
-          <img src="vrs_logo.jpeg" alt="VRS IT Solutions Logo" />
-        </div>
-
-        <div class="logo-text">
-          <strong>VRS</strong>
-          <small>IT SOLUTIONS & DIGITAL MARKETING</small>
-        </div>
-      </a>
-
-      <button
-        class="menu-btn"
-        id="menuBtn"
-        type="button"
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-      >
-        ☰
-      </button>
-
-      <nav id="mainNav">
+    <nav id="nav">
         <a href="#home">Home</a>
-
-        <!-- SERVICES DROPDOWN -->
-
-        <div class="dropdown" id="servicesDropdown">
-          <a
-            href="#services"
-            id="servicesToggle"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Services ▾
-          </a>
-
-          <div class="dropdown-menu">
-            <a href="web-development.html"> 💻 Web Development </a>
-
-            <a href="app-development.html"> 📱 App Development </a>
-
-            <a href="software-development.html"> ⚙️ Software Development </a>
-
-            <a href="cloud-services.html"> ☁️ Cloud Services </a>
-
-            <a href="it-support.html"> 🛠️ IT Support </a>
-
-            <a href="#contact"> 🔒 IT Security </a>
-          </div>
-        </div>
-
         <a href="#about">About</a>
-
+        <a href="#services">Services</a>
         <a href="#projects">Projects</a>
-
         <a href="#contact">Contact</a>
-      </nav>
-    </header>
+    </nav>
 
-    <!-- ========================================================
-       HERO
-  ========================================================= -->
+    <div class="menu" onclick="toggleMenu()">☰</div>
 
-    <section class="hero" id="home">
-      <div class="shine" style="left: 10%; top: 20%"></div>
+</header>
 
-      <div class="shine" style="right: 15%; bottom: 10%"></div>
 
-      <!-- PREMIUM 3D ORBS -->
+<!-- ================= HERO ================= -->
 
-      <div class="tech-orb orb1"></div>
-      <div class="tech-orb orb2"></div>
+<section class="hero" id="home">
 
-      <div class="hero-content">
-        <img src="logo_img.jpeg" alt="VRS IT Solutions" />
+    <div class="glow"></div>
+
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+
+    <div class="hero-content reveal">
+
+        <div class="small-title">
+            VRS IT SOLUTIONS
+        </div>
 
         <h1>
-          Smart Technology.
-          <br />
-          <span>Powerful Solutions.</span>
+            We Build
+            <span>Digital</span>
+            Experiences.
         </h1>
 
         <p>
-          VRS IT Solutions helps businesses grow with modern websites, mobile
-          applications, custom software solutions, cloud services and reliable
-          IT support.
+            Modern websites, powerful applications and creative
+            digital solutions designed to help your business grow.
         </p>
 
-        <a href="#contact" class="btn"> Get Started → </a>
-      </div>
-    </section>
+        <div class="buttons">
 
-    <!-- ========================================================
-       SERVICES
-  ========================================================= -->
+            <a href="#services" class="btn primary">
+                Explore Services
+            </a>
 
-    <section id="services">
-      <div class="section-ring one"></div>
-      <div class="section-ring two"></div>
+            <a href="#contact" class="btn secondary">
+                Let's Talk
+            </a>
 
-      <div class="our_servi">
-        <h2 class="title">Our Services</h2>
+        </div>
 
-        <p class="subtitle">
-          We provide complete technology solutions designed to help businesses
-          succeed in the digital world.
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="section-title reveal">
+
+        <small>ABOUT US</small>
+
+        <h2>Who We Are</h2>
+
+        <p>
+            Technology meets creativity.
         </p>
-      </div>
 
-      <br />
-      <br />
-      <br />
+    </div>
 
-      <div class="services">
-        <div class="card reveal">
-          <div class="icon">💻</div>
 
-          <h3>Web Development</h3>
+    <div class="about">
 
-          <p>
-            Modern, fast and responsive websites for businesses and
-            organizations.
-          </p>
+        <div class="about-img reveal">
 
-          <a href="web-development.html"> Learn More → </a>
+            <div class="about-circle">
+                <span>VRS</span>
+            </div>
+
         </div>
 
-        <div class="card reveal">
-          <div class="icon">📱</div>
 
-          <h3>App Development</h3>
+        <div class="about-text reveal">
 
-          <p>
-            User-friendly mobile applications designed for modern businesses.
-          </p>
-
-          <a href="app-development.html"> Learn More → </a>
-        </div>
-
-        <div class="card reveal">
-          <div class="icon">⚙️</div>
-
-          <h3>Software Development</h3>
-
-          <p>
-            Custom software solutions designed according to your business needs.
-          </p>
-
-          <a href="software-development.html"> Learn More → </a>
-        </div>
-
-        <div class="card reveal">
-          <div class="icon">☁️</div>
-
-          <h3>Cloud Services</h3>
-
-          <p>Secure and scalable cloud solutions for modern businesses.</p>
-
-          <a href="cloud-services.html"> Learn More → </a>
-        </div>
-
-        <div class="card reveal">
-          <div class="icon">🛠️</div>
-
-          <h3>IT Support</h3>
-
-          <p>
-            Reliable technical support to keep your business systems running
-            smoothly.
-          </p>
-
-          <a href="it-support.html"> Learn More → </a>
-        </div>
-
-        <div class="card reveal">
-          <div class="icon">🔒</div>
-
-          <h3>IT Security</h3>
-
-          <p>
-            Technology-focused security solutions to help protect business
-            systems.
-          </p>
-
-          <a href="#contact"> Contact Us → </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================
-       STATS
-  ========================================================= -->
-
-    <section class="stats reveal">
-      <div class="stat">
-        <h2>50+</h2>
-        <p>Projects</p>
-      </div>
-
-      <div class="stat">
-        <h2>40+</h2>
-        <p>Happy Clients</p>
-      </div>
-
-      <div class="stat">
-        <h2>5+</h2>
-        <p>IT Services</p>
-      </div>
-
-      <div class="stat">
-        <h2>24/7</h2>
-        <p>Support</p>
-      </div>
-    </section>
-
-    <!-- ========================================================
-       ABOUT
-  ========================================================= -->
-
-    <section class="about reveal" id="about">
-      <h2 class="title">About VRS</h2>
-
-      <p id="ab_vrs">
-        VRS IT Solutions is a technology company focused on providing modern,
-        reliable and affordable IT solutions. Our goal is to help businesses
-        build a strong digital presence and use technology to work smarter and
-        grow faster.
-      </p>
-    </section>
-
-    <!-- ========================================================
-       PROJECTS
-  ========================================================= -->
-
-    <section id="projects">
-      <h2 class="title">Our Projects</h2>
-
-      <p class="subtitle">
-        Explore some of the digital solutions created by VRS IT Solutions.
-      </p>
-
-      <div class="projects">
-        <div class="project reveal">
-          <div class="project-image web-project">
-            <span> WEB DEVELOPMENT </span>
-
-            <a href="web-development.html"> View Project </a>
-          </div>
-
-          <div class="project-content">
-            <h3>Business Website</h3>
+            <h3>
+                Turning Ideas Into Reality
+            </h3>
 
             <p>
-              A modern responsive website designed for a professional business.
+                VRS IT Solutions is focused on creating modern,
+                attractive and high-performance digital products.
+                We combine technology, design and creativity to
+                build experiences that make an impact.
             </p>
-          </div>
-        </div>
-
-        <div class="project reveal">
-          <div class="project-image app-project">
-            <span> APP DEVELOPMENT </span>
-
-            <a href="app-development.html"> View Project </a>
-          </div>
-
-          <div class="project-content">
-            <h3>Mobile Application</h3>
 
             <p>
-              A clean and user-friendly mobile application for modern customers.
+                From business websites to custom applications,
+                our goal is to deliver simple, reliable and
+                scalable solutions.
             </p>
-          </div>
+
+
+            <div class="stats">
+
+                <div class="stat">
+                    <h4>50+</h4>
+                    <p>Projects</p>
+                </div>
+
+                <div class="stat">
+                    <h4>30+</h4>
+                    <p>Clients</p>
+                </div>
+
+                <div class="stat">
+                    <h4>100%</h4>
+                    <p>Dedication</p>
+                </div>
+
+            </div>
+
         </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+
+    <div class="section-title reveal">
+
+        <small>WHAT WE DO</small>
+
+        <h2>Our Services</h2>
+
+        <p>
+            Everything you need to build your digital presence.
+        </p>
+
+    </div>
+
+
+    <div class="services-grid">
+
+
+        <div class="card reveal">
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h3>Web Development</h3>
+
+            <p>
+                Fast, responsive and modern websites built
+                according to your business requirements.
+            </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="icon">
+                🎨
+            </div>
+
+            <h3>UI / UX Design</h3>
+
+            <p>
+                Beautiful and user-friendly interfaces that
+                provide a smooth digital experience.
+            </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="icon">
+                📱
+            </div>
+
+            <h3>App Development</h3>
+
+            <p>
+                Powerful mobile applications with modern
+                design and reliable performance.
+            </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="icon">
+                ⚡
+            </div>
+
+            <h3>Performance</h3>
+
+            <p>
+                Optimized websites and applications designed
+                for speed and excellent performance.
+            </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="icon">
+                ☁️
+            </div>
+
+            <h3>Cloud Solutions</h3>
+
+            <p>
+                Scalable and secure cloud-based solutions
+                for modern businesses.
+            </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="icon">
+                🔒
+            </div>
+
+            <h3>Security</h3>
+
+            <p>
+                Security-focused development to help protect
+                your digital products and data.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+    <div class="section-title reveal">
+
+        <small>OUR WORK</small>
+
+        <h2>Featured Projects</h2>
+
+        <p>
+            Some of the things we love building.
+        </p>
+
+    </div>
+
+
+    <div class="projects">
+
 
         <div class="project reveal">
-          <div class="project-image software-project">
-            <span> SOFTWARE </span>
 
-            <a href="software-development.html"> View Project </a>
-          </div>
+            <div class="project-content">
 
-          <div class="project-content">
-            <h3>Business Software</h3>
+                <h3>Business Website</h3>
 
-            <p>Custom software designed to simplify business operations.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+                <p>Modern corporate website</p>
 
-    <!-- ========================================================
-       CONTACT
-  ========================================================= -->
+            </div>
 
-    <section class="contact" id="contact">
-      <h2 class="title">Contact VRS</h2>
-
-      <p class="subtitle">
-        Have a project in mind? Tell us about your requirements and our team
-        will get back to you.
-      </p>
-
-      <div class="contact-container reveal">
-        <!-- CONTACT INFO -->
-
-        <div class="contact-info">
-          <h2>Let's Talk</h2>
-
-          <p>
-            We would love to hear about your project. Contact VRS IT Solutions
-            today.
-          </p>
-
-          <div class="info-item">
-            📧
-            <span> kirtiraj.sysroot@gmail.com </span>
-          </div>
-
-          <div class="info-item">
-            📞
-            <span> +91 9301621693 </span>
-          </div>
-
-          <div class="info-item">
-            📍
-            <span> India </span>
-          </div>
         </div>
 
-        <!-- CONTACT FORM -->
 
-        <form class="contact-form" id="contactForm">
-          <input
-            type="text"
-            id="name"
-            placeholder="Your Name"
-            autocomplete="name"
-            required
-          />
+        <div class="project reveal">
 
-          <input
-            type="email"
-            id="email"
-            placeholder="Your Email"
-            autocomplete="email"
-            required
-          />
+            <div class="project-content">
 
-          <input
-            type="tel"
-            id="phone"
-            placeholder="Phone Number"
-            autocomplete="tel"
-            required
-          />
+                <h3>E-Commerce</h3>
 
-          <select id="service" required>
-            <option value="">Select a Service</option>
+                <p>Online shopping platform</p>
 
-            <option value="Web Development">Web Development</option>
+            </div>
 
-            <option value="App Development">App Development</option>
+        </div>
 
-            <option value="Software Development">Software Development</option>
 
-            <option value="Cloud Services">Cloud Services</option>
+        <div class="project reveal">
 
-            <option value="IT Support">IT Support</option>
+            <div class="project-content">
 
-            <option value="IT Security">IT Security</option>
-          </select>
+                <h3>Web Application</h3>
 
-          <textarea
-            id="message"
-            placeholder="Tell us about your project..."
-            rows="6"
-            required
-          ></textarea>
+                <p>Custom digital solution</p>
 
-          <button type="submit" class="btn">Send Message →</button>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="section-title reveal">
+
+        <small>GET IN TOUCH</small>
+
+        <h2>Let's Build Something</h2>
+
+        <p>
+            Have an idea? Let's turn it into reality.
+        </p>
+
+    </div>
+
+
+    <div class="contact-box reveal">
+
+        <form
+            class="form"
+            onsubmit="sendWhatsApp(event)"
+        >
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Your Email"
+                required
+            >
+
+            <input
+                type="text"
+                id="subject"
+                placeholder="Subject"
+                required
+            >
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Phone Number"
+            >
+
+            <textarea
+                id="message"
+                placeholder="Tell us about your project..."
+                required
+            ></textarea>
+
+            <button
+                type="submit"
+                class="btn primary"
+            >
+                Send Message
+            </button>
+
         </form>
-      </div>
-    </section>
 
-    <!-- ========================================================
-       FOOTER
-  ========================================================= -->
+    </div>
 
-    <footer>
-      <div class="footer-container">
-        <div class="footer-box">
-          <div class="footer-logo">VRS</div>
+</section>
 
-          <h3>VRS IT Solutions</h3>
 
-          <p>
-            Smart technology solutions for modern businesses. We help businesses
-            grow with reliable digital solutions.
-          </p>
-        </div>
+<!-- ================= FOOTER ================= -->
 
-        <div class="footer-box">
-          <h3>Quick Links</h3>
+<footer>
 
-          <a href="#home"> Home </a>
+    © 2026
+    <span>VRS IT Solutions</span>.
+    All Rights Reserved.
 
-          <a href="#about"> About Us </a>
+</footer>
 
-          <a href="#services"> Services </a>
 
-          <a href="#projects"> Projects </a>
+<script>
 
-          <a href="#contact"> Contact </a>
-        </div>
+/* ================= MOBILE MENU ================= */
 
-        <div class="footer-box">
-          <h3>Services</h3>
+function toggleMenu(){
 
-          <a href="web-development.html"> Web Development </a>
+    document
+        .getElementById("nav")
+        .classList.toggle("active");
 
-          <a href="app-development.html"> App Development </a>
+}
 
-          <a href="software-development.html"> Software Development </a>
 
-          <a href="cloud-services.html"> Cloud Services </a>
+/* ================= SCROLL REVEAL ================= */
 
-          <a href="it-support.html"> IT Support </a>
-        </div>
+function revealOnScroll(){
 
-        <div class="footer-box">
-          <h3>Contact Us</h3>
+    const elements =
+        document.querySelectorAll(".reveal");
 
-          <p>📧 kirtiraj.sysroot@gmail.com</p>
+    elements.forEach(element => {
 
-          <p>📞 +91 9301621693</p>
+        const windowHeight =
+            window.innerHeight;
 
-          <p>📍 India</p>
+        const elementTop =
+            element.getBoundingClientRect().top;
 
-          <div class="social">
-            <a href="#" aria-label="Facebook"> f </a>
+        if(elementTop < windowHeight - 80){
 
-            <a href="#" aria-label="LinkedIn"> in </a>
+            element.classList.add("active");
 
-            <a href="#" aria-label="X"> 𝕏 </a>
-
-            <a href="#" aria-label="YouTube"> ▶ </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>© 2026 VRS IT Solutions. All Rights Reserved.</p>
-
-        <a href="#home" class="top-btn" aria-label="Back to top"> ↑ </a>
-      </div>
-    </footer>
-
-    <!-- ========================================================
-       JAVASCRIPT
-  ========================================================= -->
-
-    <script>
-      /* ========================================================
-       ELEMENTS
-    ========================================================= */
-
-      const menuBtn = document.getElementById("menuBtn");
-
-      const mainNav = document.getElementById("mainNav");
-
-      const servicesDropdown = document.getElementById("servicesDropdown");
-
-      const servicesToggle = document.getElementById("servicesToggle");
-
-      const contactForm = document.getElementById("contactForm");
-
-      /* ========================================================
-       MOBILE MENU
-    ========================================================= */
-
-      menuBtn.addEventListener("click", function () {
-        const isOpen = mainNav.classList.toggle("active");
-
-        menuBtn.setAttribute("aria-expanded", isOpen);
-
-        document.body.classList.toggle("menu-open", isOpen);
-
-        menuBtn.textContent = isOpen ? "✕" : "☰";
-      });
-
-      /* ========================================================
-       SERVICES DROPDOWN
-    ========================================================= */
-
-      servicesToggle.addEventListener("click", function (event) {
-        if (window.innerWidth <= 768) {
-          event.preventDefault();
-
-          const isOpen = servicesDropdown.classList.toggle("services-open");
-
-          servicesToggle.setAttribute("aria-expanded", isOpen);
-        }
-      });
-
-      /* ========================================================
-       CLOSE MOBILE MENU AFTER NORMAL LINK CLICK
-    ========================================================= */
-
-      document.querySelectorAll("#mainNav > a").forEach(function (link) {
-        link.addEventListener("click", function () {
-          if (window.innerWidth <= 768) {
-            mainNav.classList.remove("active");
-
-            document.body.classList.remove("menu-open");
-
-            menuBtn.setAttribute("aria-expanded", "false");
-
-            menuBtn.textContent = "☰";
-
-            servicesDropdown.classList.remove("services-open");
-
-            servicesToggle.setAttribute("aria-expanded", "false");
-          }
-        });
-      });
-
-      /* ========================================================
-       CLOSE MENU WHEN SERVICE LINK IS CLICKED
-    ========================================================= */
-
-      servicesDropdown
-        .querySelectorAll(".dropdown-menu a")
-        .forEach(function (link) {
-          link.addEventListener("click", function () {
-            if (window.innerWidth <= 768) {
-              mainNav.classList.remove("active");
-
-              document.body.classList.remove("menu-open");
-
-              menuBtn.setAttribute("aria-expanded", "false");
-
-              menuBtn.textContent = "☰";
-
-              servicesDropdown.classList.remove("services-open");
-
-              servicesToggle.setAttribute("aria-expanded", "false");
-            }
-          });
-        });
-
-      /* ========================================================
-       CLOSE MENU ON OUTSIDE CLICK
-    ========================================================= */
-
-      document.addEventListener("click", function (event) {
-        if (
-          window.innerWidth <= 768 &&
-          mainNav.classList.contains("active") &&
-          !mainNav.contains(event.target) &&
-          !menuBtn.contains(event.target)
-        ) {
-          mainNav.classList.remove("active");
-
-          document.body.classList.remove("menu-open");
-
-          menuBtn.setAttribute("aria-expanded", "false");
-
-          menuBtn.textContent = "☰";
-        }
-      });
-
-      /* ========================================================
-       WHATSAPP CONTACT FORM
-    ========================================================= */
-
-      contactForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        const name = document.getElementById("name").value.trim();
-
-        const email = document.getElementById("email").value.trim();
-
-        const phone = document.getElementById("phone").value.trim();
-
-        const service = document.getElementById("service").value;
-
-        const message = document.getElementById("message").value.trim();
-
-        if (!name || !email || !phone || !service || !message) {
-          alert("Please fill in all fields.");
-
-          return;
         }
 
-        const whatsappNumber = "919301621693";
+    });
 
-        const text =
-          "Hello VRS IT Solutions,\n\n" +
-          "Name: " +
-          name +
-          "\n" +
-          "Email: " +
-          email +
-          "\n" +
-          "Phone: " +
-          phone +
-          "\n" +
-          "Service: " +
-          service +
-          "\n\n" +
-          "Project Details:\n" +
-          message;
+}
 
-        const whatsappURL =
-          "https://wa.me/" +
-          whatsappNumber +
-          "?text=" +
-          encodeURIComponent(text);
+window.addEventListener(
+    "scroll",
+    revealOnScroll
+);
 
-        window.open(whatsappURL, "_blank");
+revealOnScroll();
 
-        contactForm.reset();
-      });
 
-      /* ========================================================
-       SCROLL REVEAL
-    ========================================================= */
+/* ================= WHATSAPP ================= */
 
-      const revealElements = document.querySelectorAll(".reveal");
+function sendWhatsApp(event){
 
-      const observer = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("show");
+    event.preventDefault();
 
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          threshold: 0.12,
-        },
-      );
+    const name =
+        document.getElementById("name").value;
 
-      revealElements.forEach(function (element) {
-        observer.observe(element);
-      });
+    const email =
+        document.getElementById("email").value;
 
-      /* ========================================================
-       PREMIUM BACK-TO-TOP BUTTON
-    ========================================================= */
+    const subject =
+        document.getElementById("subject").value;
 
-      const topButton = document.querySelector(".top-btn");
+    const phone =
+        document.getElementById("phone").value;
 
-      if (topButton) {
-        topButton.addEventListener("click", function (event) {
-          event.preventDefault();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-      }
+    const message =
+        document.getElementById("message").value;
 
-      /* ========================================================
-       HEADER SCROLL EFFECT
-    ========================================================= */
 
-      const header = document.getElementById("header");
+    /*
+       Yaha apna WhatsApp number daalo.
+       Country code ke saath.
+       Example:
+       919876543210
+    */
 
-      window.addEventListener(
-        "scroll",
-        function () {
-          if (window.scrollY > 50) {
-            header.style.background = "rgba(3, 16, 35, 0.94)";
+    const whatsappNumber =
+        "919876543210";
 
-            header.style.boxShadow = "0 12px 35px rgba(0,0,0,.35)";
-          } else {
-            header.style.background = "rgba(4, 20, 43, 0.78)";
 
-            header.style.boxShadow = "0 8px 30px rgba(0,0,0,.25)";
-          }
-        },
-        {
-          passive: true,
-        },
-      );
+    const text =
+        "Hello VRS IT Solutions!%0A%0A" +
 
-      /* ========================================================
-       CLOSE DROPDOWN WHEN RESIZING TO DESKTOP
-    ========================================================= */
+        "Name: " + name + "%0A" +
 
-      window.addEventListener("resize", function () {
-        if (window.innerWidth > 768) {
-          mainNav.classList.remove("active");
+        "Email: " + email + "%0A" +
 
-          servicesDropdown.classList.remove("services-open");
+        "Subject: " + subject + "%0A" +
 
-          document.body.classList.remove("menu-open");
+        "Phone: " + phone + "%0A%0A" +
 
-          menuBtn.setAttribute("aria-expanded", "false");
+        "Message: " + message;
 
-          menuBtn.textContent = "☰";
 
-          servicesToggle.setAttribute("aria-expanded", "false");
-        }
-      });
-    </script>
-  </body>
-</html>
+    const url =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        text;
+
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+}
+
+
+/* ================= CLOSE MENU ================= */
+
+document.querySelectorAll("nav a")
+.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        document
+            .getElementById("nav")
+            .classList.remove("active");
+
+    });
+
+});
+
+</script>
+
+</body>
+              </html>
