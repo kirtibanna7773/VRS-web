@@ -418,14 +418,14 @@
         width: 48px;
         height: 48px;
 
-       
+        border-radius: 12px;
 
         display: flex;
         align-items: center;
         justify-content: center;
 
         overflow: hidden;
-border-radius:50%;
+
         background: #08294d;
 
         box-shadow: 0 0 15px rgba(0, 174, 255, 0.5);
@@ -1963,29 +1963,59 @@ border-radius:50%;
       }
 
       .top-btn {
-        width: 42px;
-        height: 42px;
-
+        width: 46px;
+        height: 46px;
         display: flex !important;
-
         align-items: center;
         justify-content: center;
-
-        background: #008cff;
-
+        position: relative;
+        background: linear-gradient(135deg, #4dd9ff, #008cff);
         color: white !important;
-
+        border: 1px solid rgba(255,255,255,.28);
         border-radius: 50%;
+        box-shadow: 0 0 18px rgba(0,174,255,.45);
+        transition: transform .35s ease, box-shadow .35s ease, background .35s ease;
+        animation: topButtonFloat 2.2s ease-in-out infinite;
+      }
 
-        transition: 0.3s;
+      .top-btn::before {
+        content: "";
+        position: absolute;
+        inset: -5px;
+        border: 1px solid rgba(77,217,255,.35);
+        border-radius: 50%;
+        animation: topButtonPulse 2.2s ease-out infinite;
+        pointer-events: none;
+      }
+
+      .top-btn::after {
+        content: "";
+        position: absolute;
+        inset: 3px;
+        border-radius: 50%;
+        background: linear-gradient(180deg, rgba(255,255,255,.22), transparent 45%);
+        pointer-events: none;
+      }
+
+      @keyframes topButtonFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-4px); }
+      }
+
+      @keyframes topButtonPulse {
+        0% { transform: scale(.92); opacity: .7; }
+        70%, 100% { transform: scale(1.35); opacity: 0; }
       }
 
       .top-btn:hover {
-        transform: translateY(-5px);
+        transform: translateY(-7px) scale(1.08);
+        background: linear-gradient(135deg, #7be5ff, #00a2ff);
+        box-shadow: 0 0 25px rgba(0,200,255,.75), 0 0 55px rgba(0,140,255,.28);
+        animation-play-state: paused;
+      }
 
-        background: #4dd9ff;
-
-        color: #031225 !important;
+      .top-btn:active {
+        transform: translateY(-2px) scale(.96);
       }
 
       /* =========================================================
@@ -2916,7 +2946,188 @@ border-radius:50%;
 @media (max-width: 480px) {
   section::before { display: none !important; }
   * { box-shadow: none !important; text-shadow: none !important; }
+  .top-btn {
+    animation: topButtonFloat 2.8s ease-in-out infinite;
+    box-shadow: 0 0 12px rgba(0,174,255,.28);
+  }
+  .top-btn::before { animation-duration: 2.8s; }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .top-btn, .top-btn::before { animation: none !important; }
+}
+
+
+/* =========================================================
+   DESKTOP PREMIUM MOTION - SERVICES / ABOUT / PROJECTS
+   Smooth, layered and GPU-friendly for laptop/PC
+========================================================= */
+@media (min-width: 769px) {
+  /* Section headings enter cleanly with the content */
+  #services .title,
+  #projects .title,
+  .about .title,
+  #services .subtitle,
+  #projects .subtitle,
+  .about > p {
+    will-change: transform, opacity;
+  }
+
+  /* Services: polished glass cards */
+  #services .card {
+    transform: translateY(0) perspective(900px) rotateX(0deg);
+    will-change: transform, box-shadow;
+  }
+
+  #services .card:nth-child(1) { transition-delay: 0s; }
+  #services .card:nth-child(2) { transition-delay: 0.08s; }
+  #services .card:nth-child(3) { transition-delay: 0.16s; }
+  #services .card:nth-child(4) { transition-delay: 0.24s; }
+  #services .card:nth-child(5) { transition-delay: 0.32s; }
+  #services .card:nth-child(6) { transition-delay: 0.40s; }
+
+  #services .card:hover {
+    transform: translateY(-14px) perspective(900px) rotateX(2deg) rotateY(-1deg) scale(1.015);
+  }
+
+  #services .card::after {
+    pointer-events: none;
+  }
+
+  #services .icon {
+    transform-origin: center;
+  }
+
+  #services .card:hover .icon {
+    animation: desktopIconPop 0.55s ease both;
+  }
+
+  @keyframes desktopIconPop {
+    0% { transform: translateY(0) scale(1) rotate(0); }
+    55% { transform: translateY(-8px) scale(1.14) rotate(7deg); }
+    100% { transform: translateY(-5px) scale(1.08) rotate(4deg); }
+  }
+
+  /* About: premium glass presentation */
+  #about .title {
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+      0 18px 45px rgba(0, 60, 120, 0.14),
+      0 0 0 1px rgba(77, 217, 255, 0.08),
+      inset 0 1px 0 rgba(255,255,255,.9);
+  }
+
+  #about .title::after {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: -80%;
+    width: 45%;
+    height: 140%;
+    background: linear-gradient(105deg, transparent, rgba(255,255,255,.7), transparent);
+    transform: skewX(-20deg);
+    animation: aboutShine 5s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes aboutShine {
+    0%, 65% { left: -80%; }
+    100% { left: 140%; }
+  }
+
+  #about > p {
+    position: relative;
+    overflow: hidden;
+    transition: transform .45s ease, box-shadow .45s ease, border-color .45s ease;
+  }
+
+  #about > p::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(#00bfff, #0875bd);
+    box-shadow: 0 0 18px rgba(0,191,255,.45);
+  }
+
+  #about > p:hover {
+    transform: translateY(-8px);
+    border-color: rgba(0,174,255,.28);
+    box-shadow:
+      0 28px 65px rgba(0,80,150,.18),
+      0 0 30px rgba(0,174,255,.12);
+  }
+
+  /* Projects: stronger visual depth */
+  #projects .project {
+    position: relative;
+    will-change: transform, box-shadow;
+  }
+
+  #projects .project:nth-child(1) { transition-delay: 0s; }
+  #projects .project:nth-child(2) { transition-delay: .10s; }
+  #projects .project:nth-child(3) { transition-delay: .20s; }
+
+  #projects .project::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid transparent;
+    background: linear-gradient(135deg, rgba(77,217,255,.45), transparent 35%, transparent 65%, rgba(0,140,255,.25)) border-box;
+    -webkit-mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity .45s ease;
+    pointer-events: none;
+  }
+
+  #projects .project:hover::after {
+    opacity: 1;
+  }
+
+  #projects .project-image {
+    transition: transform .6s cubic-bezier(.2,.8,.2,1);
+  }
+
+  #projects .project:hover .project-image {
+    transform: scale(1.035);
+  }
+
+  #projects .project-image span {
+    transition: transform .5s ease, letter-spacing .5s ease, text-shadow .5s ease;
+  }
+
+  #projects .project:hover .project-image span {
+    transform: translateY(-28px) scale(1.04);
+    letter-spacing: 1px;
+    text-shadow: 0 0 20px rgba(255,255,255,.7), 0 0 35px rgba(0,191,255,.55);
+  }
+
+  #projects .project-image a {
+    box-shadow: 0 8px 25px rgba(0,0,0,.22);
+  }
+
+  /* Scroll reveal: smoother and more premium on desktop */
+  .reveal {
+    transform: translateY(45px) scale(.975);
+    filter: blur(2px);
+    transition:
+      opacity .75s ease,
+      transform .85s cubic-bezier(.16,1,.3,1),
+      filter .75s ease;
+  }
+
+  .reveal.show {
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
 </style>
   </head>
 
@@ -3616,6 +3827,19 @@ border-radius:50%;
       revealElements.forEach(function (element) {
         observer.observe(element);
       });
+
+      /* ========================================================
+       PREMIUM BACK-TO-TOP BUTTON
+    ========================================================= */
+
+      const topButton = document.querySelector(".top-btn");
+
+      if (topButton) {
+        topButton.addEventListener("click", function (event) {
+          event.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
 
       /* ========================================================
        HEADER SCROLL EFFECT
